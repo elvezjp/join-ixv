@@ -26,6 +26,15 @@ jobs:
         run: pnpm build
         env:
           NODE_ENV: production
+          NEXT_PUBLIC_BASE_PATH: /join-ixv
+
+      # 静的ファイルの構造を修正
+      - name: Prepare for deployment
+        run: |
+          cd out
+          mkdir -p join-ixv/_next
+          cp -r _next/* join-ixv/_next/
+          touch .nojekyll
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
