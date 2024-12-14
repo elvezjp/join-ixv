@@ -1,0 +1,86 @@
+.modal-backdrop {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-backdrop.entering,
+.modal-backdrop.entered {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-backdrop.exiting,
+.modal-backdrop.exited {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-content {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.7);
+    transition: all 0.3s ease;
+    max-height: calc(100vh - 2rem);
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content.entering,
+.modal-content.entered {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.modal-content.exiting {
+    opacity: 0;
+    transform: scale(0.7);
+}
+
+.modal-content.exited {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.7);
+}
+
+.modal-header {
+    flex-shrink: 0;
+}
+
+.modal-body {
+    flex: 1;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+.modal-footer {
+    flex-shrink: 0;
+}
+
+.modal-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
+.feature-card {
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
