@@ -15,8 +15,27 @@
         .feature-card:hover {
             transform: translateY(-5px);
         }
-        .modal {
+
+        /* モーダルアニメーション */
+        .modal-backdrop {
             transition: opacity 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+        .modal-backdrop.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content {
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0.7);
+        }
+        .modal-content.active {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
         }
     </style>
 </head>
@@ -135,15 +154,14 @@
     </section>
 
     <!-- モーダルウィンドウ -->
-    <div id="termsModal" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden z-50 modal">
+    <div id="termsModal" class="fixed inset-0 bg-gray-900 bg-opacity-50 z-50 modal-backdrop">
         <div class="fixed inset-0 flex items-center justify-center p-4">
-            <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-hidden">
+            <div class="modal-content bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-hidden">
                 <div class="p-6">
                     <h2 class="text-2xl font-bold mb-4">クローズドベータ版利用規約</h2>
                     <div class="overflow-y-auto max-h-[60vh] pr-2">
                         <p class="mb-4">株式会社エルブズ（以下「当社」といいます）は、当社が提供するクローズドベータ版（以下「本サービス」といいます）に関する利用規約を以下の通り定めます。本サービスの利用者（以下「利用者」といいます）は、本規約に同意した上でご利用ください。</p>
 
-                        <!-- 利用規約の内容 -->
                         <h3 class="font-bold mt-6">第1条（目的）</h3>
                         <p>本規約は、本サービスを利用する利用者に適用されます。本サービスは、サービスの機能確認および改善を目的として提供されるものであり、利用者は以下の条件に従ってこれを利用するものとします。</p>
 
@@ -159,8 +177,31 @@
                             </li>
                         </ol>
 
-                        <!-- 残りの利用規約セクション -->
-                        <!-- ... -->
+                        <h3 class="font-bold mt-6">第3条（フィードバック）</h3>
+                        <p>利用者は、本サービスの利用にあたり、以下の事項に同意するものとします：</p>
+                        <ol class="list-decimal pl-6">
+                            <li>定期的なフィードバックの提供</li>
+                            <li>不具合や改善点の報告</li>
+                            <li>利用状況に関するアンケートへの回答</li>
+                        </ol>
+
+                        <h3 class="font-bold mt-6">第4条（禁止事項）</h3>
+                        <p>利用者は、本サービスの利用にあたり、以下の行為を行ってはならないものとします：</p>
+                        <ol class="list-decimal pl-6">
+                            <li>本サービスの不正利用</li>
+                            <li>他のユーザーへの妨害行為</li>
+                            <li>当社の信用を毀損する行為</li>
+                            <li>その他、当社が不適切と判断する行為</li>
+                        </ol>
+
+                        <h3 class="font-bold mt-6">第5条（免責事項）</h3>
+                        <p>当社は、本サービスの提供において以下の事項について一切の責任を負わないものとします：</p>
+                        <ol class="list-decimal pl-6">
+                            <li>本サービスの中断または停止</li>
+                            <li>データの消失または破損</li>
+                            <li>第三者による不正アクセス</li>
+                            <li>その他、本サービスに関連して発生した損害</li>
+                        </ol>
 
                         <div class="mt-8 text-right">
                             <p class="text-gray-600">制定日: 2024年12月16日</p>
@@ -186,13 +227,31 @@
     <script>
         function openModal(event) {
             event.preventDefault();
-            document.getElementById('termsModal').classList.remove('hidden');
+            const modal = document.getElementById('termsModal');
+            const modalContent = modal.querySelector('.modal-content');
+
+            // モーダルを表示
+            modal.classList.add('active');
+            // 少し遅れてコンテンツをアニメーション
+            setTimeout(() => {
+                modalContent.classList.add('active');
+            }, 10);
+
             document.body.style.overflow = 'hidden';
         }
 
         function closeModal() {
-            document.getElementById('termsModal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
+            const modal = document.getElementById('termsModal');
+            const modalContent = modal.querySelector('.modal-content');
+
+            // まずコンテンツのアニメーションを開始
+            modalContent.classList.remove('active');
+
+            // コンテンツのアニメーション後にモーダル自体を非表示
+            setTimeout(() => {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }, 300); // トランジションの時間と合わせる
         }
 
         // モーダル外クリックで閉じる
@@ -204,18 +263,8 @@
 
         // ESCキーでモーダルを閉じる
         document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape' && !document.getElementById('termsModal').classList.contains('hidden')) {
+            if (event.key === 'Escape' && document.getElementById('termsModal').classList.contains('active')) {
                 closeModal();
-            }
-        });
-
-        document.getElementById('signupForm').addEventListener('submit', function(event) {
-            const priorityCheckbox = document.getElementById('priority');
-            const agreementCheckbox = document.getElementById('agreement');
-
-            if (!agreementCheckbox.checked) {
-                event.preventDefault();
-                alert('利用規約に同意してください。');
             }
         });
     </script>
