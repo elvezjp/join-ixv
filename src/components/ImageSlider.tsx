@@ -30,37 +30,14 @@ interface ImageSliderProps {
  */
 export default function ImageSlider({ slides }: ImageSliderProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
-  let autoplayInterval: NodeJS.Timeout;
-
-  // スライドを移動する関数
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-  };
-
-  // 次のスライドへ
-  const nextSlide = () => {
-    goToSlide((currentSlide + 1) % slides.length);
-  };
-
-  // 前のスライドへ
-  const prevSlide = () => {
-    goToSlide((currentSlide - 1 + slides.length) % slides.length);
-  };
-
-  // 自動再生の開始
-  const startAutoplay = () => {
-    autoplayInterval = setInterval(nextSlide, 5000);
-  };
-
-  // 自動再生の停止
-  const stopAutoplay = () => {
-    clearInterval(autoplayInterval);
-  };
 
   useEffect(() => {
-    startAutoplay();
-    return () => stopAutoplay();
-  }, []);
+    const autoplayInterval = setInterval(() => {
+      setCurrentSlide((current) => (current + 1) % slides.length);
+    }, 5000);
+
+    return () => clearInterval(autoplayInterval);
+  }, [slides.length]);
 
   return (
     <div className="relative overflow-hidden rounded-lg shadow-xl">
@@ -68,8 +45,6 @@ export default function ImageSlider({ slides }: ImageSliderProps) {
         <div
           className="slider-track"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-          onMouseEnter={stopAutoplay}
-          onMouseLeave={startAutoplay}
         >
           {slides.map((slide, index) => (
             <div key={index} className="slide">
@@ -90,9 +65,7 @@ export default function ImageSlider({ slides }: ImageSliderProps) {
 
         <button
           onClick={() => {
-            prevSlide();
-            stopAutoplay();
-            startAutoplay();
+            setCurrentSlide((current) => (current - 1 + slides.length) % slides.length);
           }}
           className="absolute left-2 top-1/2 -translate-y-1/2 bg-blue-600 p-2 rounded-full hover:bg-blue-700 transition z-10"
         >
@@ -102,9 +75,7 @@ export default function ImageSlider({ slides }: ImageSliderProps) {
         </button>
         <button
           onClick={() => {
-            nextSlide();
-            stopAutoplay();
-            startAutoplay();
+            setCurrentSlide((current) => (current + 1) % slides.length);
           }}
           className="absolute right-2 top-1/2 -translate-y-1/2 bg-blue-600 p-2 rounded-full hover:bg-blue-700 transition z-10"
         >
@@ -118,9 +89,7 @@ export default function ImageSlider({ slides }: ImageSliderProps) {
             <button
               key={index}
               onClick={() => {
-                goToSlide(index);
-                stopAutoplay();
-                startAutoplay();
+                setCurrentSlide(index);
               }}
               className={`indicator w-2 h-2 rounded-full bg-white ${
                 index !== currentSlide ? 'opacity-50' : ''
