@@ -27,21 +27,21 @@ export default function Header() {
   const slides = [
     {
       imageSrc: '/join-ixv/images/hero-project-agent.png',
-      alt: 'プロジェクト管理エージェント',
-      title: 'プロジェクト管理エージェント',
-      description: 'プロジェクトの詳細な情報を一元管理'
+      alt: '上流工程の効率化',
+      title: '上流工程の効率化',
+      description: 'AIを活用して要件定義書作成を支援し、品質のばらつきを低減します。'
     },
     {
       imageSrc: '/join-ixv/images/hero-task-agent.png',
-      alt: 'タスク管理エージェント',
-      title: 'タスク管理エージェント',
-      description: 'カンバンボードで効率的なタスク管理を実現'
+      alt: 'プロジェクト管理の最適化',
+      title: 'プロジェクト管理の最適化',
+      description: 'AIによる進捗管理の自動化や最適なリソース配分提案を実現します。'
     },
     {
       imageSrc: '/join-ixv/images/hero-extension.png',
-      alt: 'IXVエクステンション',
-      title: 'IXVエクステンション',
-      description: '開発をよりスマートに、より効率的に'
+      alt: '開発プロセスの改善',
+      title: '開発プロセスの改善',
+      description: 'コード統合の支援を行い、品質を向上させるとともに、チームの成果を最大化します。'
     }
   ];
 
