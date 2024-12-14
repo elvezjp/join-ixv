@@ -1,22 +1,4 @@
 export default function Features() {
-	const features = [
-	  {
-		title: "Morning Sync",
-		subtitle: "デイリープランニング",
-		description: "AIによるタスク分析と最適な担当者の提案。チーム全体の効率を最大化します。"
-	  },
-	  {
-		title: "AI Analysis",
-		subtitle: "インテリジェント分析",
-		description: "変更の影響範囲を自動分析。リスクを事前に特定し、最適な統合方針を提案します。"
-	  },
-	  {
-		title: "Evening Sync",
-		subtitle: "ガイド付き統合",
-		description: "AIのガイダンスに従って安全に統合。すべての作業を自動記録します。"
-	  }
-	];
-
 	return (
 		<>
 			<section id="features" className="py-20 bg-white">
