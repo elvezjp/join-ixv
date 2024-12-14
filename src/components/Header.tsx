@@ -45,7 +45,7 @@ export default function Header() {
             <div className="relative w-full h-[400px]">
               <Image
                 src="/api/placeholder/600/400"
-                alt="IXVダッシュボード"
+                alt="ダッシュボードイメージ"
                 className="rounded-lg shadow-xl"
                 fill
                 objectFit="cover"
