@@ -3,22 +3,22 @@
  * @lastModifiedBy 冨永善視
  * @modified 2024年12月14日
  * @version 0.0.1
- * @description 申し込みフォームのコンポーネント。
+ * @description 申込みフォームのコンポーネント。
  * @copyright © 2024 株式会社エルブズ. All rights reserved.
  */
 
 import { FormEvent, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
-// 申し込みフォームのプロパティ型
+// 申込みフォームのプロパティ型
 interface SignupFormProps {
   onOpenModal: () => void;
 }
 
 /**
- * 申し込みフォームのコンポーネント。
+ * 申込みフォームのコンポーネント。
  * @param onOpenModal - モーダルを開く関数。
- * @returns 申し込みフォームのコンポーネント。
+ * @returns 申込みフォームのコンポーネント。
  */
 export default function SignupForm({ onOpenModal }: SignupFormProps) {
   const [isAgreed, setIsAgreed] = useState(false);
@@ -38,12 +38,12 @@ export default function SignupForm({ onOpenModal }: SignupFormProps) {
       );
 
       if (result.text === 'OK') {
-        alert('申し込みを受け付けました。担当者より追ってご連絡させていただきます。');
+        alert('申込みを受け付けました。担当者より追ってご連絡させていただきます。');
         formRef.current.reset();
       }
     } catch (error) {
       console.error('送信エラー:', error);
-      alert('申し込みの送信に失敗しました。お手数ですが、時間をおいて再度お試しください。');
+      alert('申込みの送信に失敗しました。お手数ですが、時間をおいて再度お試しください。');
     }
   };
 
