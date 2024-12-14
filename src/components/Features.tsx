@@ -16,15 +16,15 @@ export default function Features() {
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 						<div className="feature-card bg-gray-100 p-6 rounded-lg shadow-lg">
 							<h3 className="text-xl font-bold text-blue-600 mb-4">上流工程の効率化</h3>
-							<p>AIを活用した要件定義書作成支援と品質ばらつきを低減します。</p>
+							<p>AIを活用して要件定義書作成を支援し、品質のばらつきを低減します。</p>
 						</div>
 						<div className="feature-card bg-gray-100 p-6 rounded-lg shadow-lg">
 							<h3 className="text-xl font-bold text-blue-600 mb-4">プロジェクト管理の最適化</h3>
-							<p>AIによる進捗管理の自動化やリソース配分提案で最大効率化。</p>
+							<p>AIによる進捗管理の自動化や最適なリソース配分提案を実現します。</p>
 						</div>
 						<div className="feature-card bg-gray-100 p-6 rounded-lg shadow-lg">
 							<h3 className="text-xl font-bold text-blue-600 mb-4">開発プロセスの改善</h3>
-							<p>品質メトリクス自動計測やナレッジ蓄積を促進します。</p>
+							<p>コード統合の支援を行い、品質を向上させるとともに、チームの成果を最大化します。</p>
 						</div>
 					</div>
 				</div>
@@ -38,8 +38,8 @@ export default function Features() {
 							<h3 className="text-xl font-bold text-blue-600 mb-4">主な課題</h3>
 							<ul className="list-disc list-inside text-gray-700">
 								<li>要件の曖昧さやステークホルダー間の認識齟齬</li>
-								<li>タスク分割やアサインの難しさ</li>
-								<li>属人化した開発やナレッジ継承の困難さ</li>
+								<li>タスク分割やリソースアサインの難しさ</li>
+								<li>属人化した開発やナレッジ共有・継承の困難さ</li>
 							</ul>
 						</div>
 						<div className="feature-card bg-gray-100 p-6 rounded-lg shadow-lg">
@@ -47,7 +47,7 @@ export default function Features() {
 							<ul className="list-disc list-inside text-gray-700">
 								<li>AIを活用した要件定義書作成支援と品質チェックの自動化</li>
 								<li>最適なリソース配分提案と進捗管理の自動化</li>
-								<li>コード統合支援やナレッジ蓄積の促進</li>
+								<li>コード統合支援やナレッジ共有・蓄積の促進</li>
 							</ul>
 						</div>
 					</div>
