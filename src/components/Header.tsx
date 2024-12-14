@@ -26,19 +26,19 @@ export default function Header() {
 
   const slides = [
     {
-      imageSrc: '/images/hero-project-agent.png',
+      imageSrc: '/join-ixv/images/hero-project-agent.png',
       alt: 'プロジェクト管理エージェント',
       title: 'プロジェクト管理エージェント',
       description: 'プロジェクトの詳細な情報を一元管理'
     },
     {
-      imageSrc: '/images/hero-task-agent.png',
+      imageSrc: '/join-ixv/images/hero-task-agent.png',
       alt: 'タスク管理エージェント',
       title: 'タスク管理エージェント',
       description: 'カンバンボードで効率的なタスク管理を実現'
     },
     {
-      imageSrc: '/images/hero-extension.png',
+      imageSrc: '/join-ixv/images/hero-extension.png',
       alt: 'IXVエクステンション',
       title: 'IXVエクステンション',
       description: '開発をよりスマートに、より効率的に'
