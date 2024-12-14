@@ -7,7 +7,7 @@
  * @copyright © 2024 株式会社エルブズ. All rights reserved.
  */
 
-import { FormEvent, useRef } from 'react';
+import { FormEvent, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
 // 申し込みフォームのプロパティ型
@@ -21,6 +21,7 @@ interface SignupFormProps {
  * @returns 申し込みフォームのコンポーネント。
  */
 export default function SignupForm({ onOpenModal }: SignupFormProps) {
+  const [isAgreed, setIsAgreed] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = async (e: FormEvent) => {
@@ -126,6 +127,8 @@ export default function SignupForm({ onOpenModal }: SignupFormProps) {
                 name="agreement"
                 className="mr-2"
                 required
+                checked={isAgreed}
+                onChange={(e) => setIsAgreed(e.target.checked)}
               />
               <label htmlFor="agreement" className="text-gray-700">
                 <button
@@ -141,7 +144,10 @@ export default function SignupForm({ onOpenModal }: SignupFormProps) {
           </div>
           <button
             type="submit"
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition w-full"
+            className={`text-white px-6 py-3 rounded-lg font-semibold transition w-full ${
+              isAgreed ? 'bg-blue-600 hover:bg-blue-700' : 'bg-gray-400 cursor-not-allowed'
+            }`}
+            disabled={!isAgreed}
           >
             申込む
           </button>
