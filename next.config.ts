@@ -7,7 +7,7 @@ const nextConfig = {
   // basePath と assetPrefix の設定を修正
   basePath: '',
   assetPrefix: '',
-  distDir: 'out',
+  distDir: 'docs',
 }
 
 module.exports = nextConfig
