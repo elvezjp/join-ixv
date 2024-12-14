@@ -55,7 +55,7 @@ export default function Header() {
             className="bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-blue-50 transition"
             scroll={true}
           >
-            クローズドβ申し込み
+            クローズドβ版申込み
           </Link>
         </nav>
         <div className="flex flex-col md:flex-row items-center justify-between">
@@ -73,7 +73,7 @@ export default function Header() {
                 className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition"
                 scroll={true}
               >
-                無料で申し込む
+                クローズドβ版申込み
               </Link>
               <Link
                 href="#features"

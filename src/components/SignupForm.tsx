@@ -49,7 +49,7 @@ export default function SignupForm({ onOpenModal }: SignupFormProps) {
   return (
     <section id="signup" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-16">クローズドβ申し込み</h2>
+        <h2 className="text-3xl font-bold text-center mb-16">クローズドβ版申込み</h2>
         <form ref={formRef} onSubmit={handleSubmit} className="bg-white p-8 rounded-xl shadow-lg max-w-xl mx-auto">
           <div className="mb-4">
             <label htmlFor="company" className="block text-gray-700 font-semibold mb-2">
@@ -116,7 +116,7 @@ export default function SignupForm({ onOpenModal }: SignupFormProps) {
             <div>
               <input type="checkbox" id="priority" name="priority" className="mr-2" />
               <label htmlFor="priority" className="text-gray-700">
-                優先申し込みをしました
+                優先申込みをしました
               </label>
             </div>
             <div>
@@ -143,7 +143,7 @@ export default function SignupForm({ onOpenModal }: SignupFormProps) {
             type="submit"
             className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition w-full"
           >
-            申し込む
+            申込む
           </button>
         </form>
       </div>
