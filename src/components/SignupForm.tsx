@@ -1,21 +1,41 @@
-import { FormEvent } from 'react';
+import { FormEvent, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 interface SignupFormProps {
   onOpenModal: () => void;
 }
 
 export default function SignupForm({ onOpenModal }: SignupFormProps) {
-  const handleSubmit = (e: FormEvent) => {
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    // フォーム送信処理をここに実装
-    console.log('Form submitted');
+
+    if (!formRef.current) return;
+
+    try {
+      const result = await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        formRef.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      );
+
+      if (result.text === 'OK') {
+        alert('申し込みを受け付けました。担当者より追ってご連絡させていただきます。');
+        formRef.current.reset();
+      }
+    } catch (error) {
+      console.error('送信エラー:', error);
+      alert('申し込みの送信に失敗しました。お手数ですが、時間をおいて再度お試しください。');
+    }
   };
 
   return (
     <section id="signup" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl font-bold text-center mb-16">クローズドβ申し込み</h2>
-        <form onSubmit={handleSubmit} className="bg-white p-8 rounded-xl shadow-lg max-w-xl mx-auto">
+        <form ref={formRef} onSubmit={handleSubmit} className="bg-white p-8 rounded-xl shadow-lg max-w-xl mx-auto">
           <div className="mb-4">
             <label htmlFor="company" className="block text-gray-700 font-semibold mb-2">
               会社名
