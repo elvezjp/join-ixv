@@ -4,7 +4,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/join-ixv',
+  basePath: process.env.NODE_ENV === 'production' ? '/join-ixv' : '',
 }
 
 module.exports = nextConfig
