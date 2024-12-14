@@ -6,6 +6,23 @@
     <title>IXV (イクシブ) - クローズドβ申し込み</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
     <style>
+        .slider-track {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 100%;  /* この行を変更 */
+        }
+
+        .slide {
+            min-width: 100%;  /* この行を変更 */
+            position: relative;
+        }
+
+        /* スライダーのコンテナに overflow-hidden を確実に適用 */
+        #slider {
+            overflow: hidden;
+            width: 100%;
+        }
+
         .gradient-bg {
             background: linear-gradient(120deg, #1a365d 0%, #2563eb 100%);
         }
@@ -165,45 +182,46 @@
                 <div class="md:w-1/2">
                     <div class="relative overflow-hidden rounded-lg shadow-xl">
                         <!-- スライダーのコンテナ -->
-                        <div id="slider" class="relative w-full">
-                            <div class="slider-track flex transition-transform duration-500">
-                                <div class="slide w-full flex-shrink-0">
-                                    <img src="images/hero-extension.png" alt="IXVダッシュボード" class="w-full">
+                        <div id="slider">
+                            <div class="slider-track">
+                                <div class="slide">
+                                    <img src="/images/hero-extension.png" alt="ユーザーインターフェースデザイン画面" class="w-full h-full object-cover">
                                     <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
-                                        <h3 class="text-xl font-semibold">IXVダッシュボード</h3>
-                                        <p class="text-sm">直感的なインターフェースで開発をスムーズに</p>
+                                        <h3 class="text-xl font-semibold">シンプルなUI</h3>
+                                        <p class="text-sm">直感的な操作で開発をスムーズに</p>
                                     </div>
                                 </div>
-                                <div class="slide w-full flex-shrink-0">
-                                    <img src="images/hero-project-agent.png" alt="AIアシスタント" class="w-full">
+                                <div class="slide">
+                                    <img src="/images/hero-project-agent.png" alt="プロジェクト管理画面" class="w-full h-full object-cover">
                                     <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
-                                        <h3 class="text-xl font-semibold">AIアシスタント</h3>
-                                        <p class="text-sm">AIによる高度な開発支援</p>
+                                        <h3 class="text-xl font-semibold">プロジェクト管理</h3>
+                                        <p class="text-sm">プロジェクトの詳細な情報を一元管理</p>
                                     </div>
                                 </div>
-                                <div class="slide w-full flex-shrink-0">
-                                    <img src="images/hero-task-agent.png" alt="チーム連携" class="w-full">
+                                <div class="slide">
+                                    <img src="/images/hero-task-agent.png" alt="タスク管理画面" class="w-full h-full object-cover">
                                     <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
-                                        <h3 class="text-xl font-semibold">チーム連携</h3>
-                                        <p class="text-sm">シームレスな情報共有とコラボレーション</p>
+                                        <h3 class="text-xl font-semibold">タスク管理</h3>
+                                        <p class="text-sm">カンバンボードで効率的なタスク管理を実現</p>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- 矢印ボタン -->
-                            <button id="prevBtn" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full hover:bg-opacity-75 transition">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <!-- 矢印ボタンの部分を以下のように更新 -->
+                            <button id="prevBtn" class="absolute left-2 top-1/2 -translate-y-1/2 bg-blue-600 p-2 rounded-full hover:bg-blue-700 transition z-10">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                                 </svg>
                             </button>
-                            <button id="nextBtn" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full hover:bg-opacity-75 transition">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <button id="nextBtn" class="absolute right-2 top-1/2 -translate-y-1/2 bg-blue-600 p-2 rounded-full hover:bg-blue-700 transition z-10">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                                 </svg>
                             </button>
 
                             <!-- インジケーター -->
-                            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+                            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
                                 <button class="indicator w-2 h-2 rounded-full bg-white"></button>
                                 <button class="indicator w-2 h-2 rounded-full bg-white opacity-50"></button>
                                 <button class="indicator w-2 h-2 rounded-full bg-white opacity-50"></button>
