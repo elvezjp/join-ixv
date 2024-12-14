@@ -283,7 +283,19 @@
     <section id="signup" class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-16">クローズドβ申し込み</h2>
-            <form id="signupForm" action="https://example.com/submit" method="post" class="bg-white p-8 rounded-xl shadow-lg max-w-xl mx-auto">
+            <form action="https://formsubmit.co/info@elvez.co.jp" method="POST" class="bg-white p-8 rounded-xl shadow-lg max-w-xl mx-auto">
+                <!-- 自動返信メッセージの設定 -->
+                <input type="hidden" name="_autoresponse" value="クローズドβ申し込みを受け付けました。担当者より追ってご連絡させていただきます。">
+
+                <!-- リダイレクト先の設定 -->
+                <!-- <input type="hidden" name="_next" value="https://elvez.co.jp/thanks"> -->
+
+                <!-- メールの件名設定 -->
+                <input type="hidden" name="_subject" value="【クローズドβ】新規申し込み">
+
+                <!-- テンプレート設定 -->
+                <input type="hidden" name="_template" value="table">
+
                 <div class="mb-4">
                     <label for="company" class="block text-gray-700 font-semibold mb-2">会社名</label>
                     <input type="text" id="company" name="company" class="w-full border border-gray-300 rounded-lg px-4 py-2" required>
