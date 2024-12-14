@@ -1,10 +1,25 @@
+/**
+ * @file src/components/SignupForm.tsx
+ * @lastModifiedBy 冨永善視
+ * @modified 2024年12月14日
+ * @version 0.0.1
+ * @description 申し込みフォームのコンポーネント。
+ * @copyright © 2024 株式会社エルブズ. All rights reserved.
+ */
+
 import { FormEvent, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
+// 申し込みフォームのプロパティ型
 interface SignupFormProps {
   onOpenModal: () => void;
 }
 
+/**
+ * 申し込みフォームのコンポーネント。
+ * @param onOpenModal - モーダルを開く関数。
+ * @returns 申し込みフォームのコンポーネント。
+ */
 export default function SignupForm({ onOpenModal }: SignupFormProps) {
   const formRef = useRef<HTMLFormElement>(null);
 

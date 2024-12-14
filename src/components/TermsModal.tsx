@@ -1,10 +1,26 @@
+/**
+ * @file src/components/TermsModal.tsx
+ * @lastModifiedBy 冨永善視
+ * @modified 2024年12月14日
+ * @version 0.0.1
+ * @description 利用規約のモーダルのコンポーネント。
+ * @copyright © 2024 株式会社エルブズ. All rights reserved.
+ */
+
 import { useEffect, useCallback, useState } from 'react';
 
+// 利用規約のモーダルのプロパティ型
 interface TermsModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
+/**
+ * 利用規約のモーダルのコンポーネント。
+ * @param isOpen - モーダルが開いているかどうか。
+ * @param onClose - モーダルを閉じる関数。
+ * @returns 利用規約のモーダルのコンポーネント。
+ */
 export default function TermsModal({ isOpen, onClose }: TermsModalProps) {
   const [animationState, setAnimationState] = useState<'entering' | 'entered' | 'exiting' | 'exited'>('exited');
 

@@ -1,0 +1,15 @@
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  position: relative;
+}
+
+#slider {
+  overflow: hidden;
+  width: 100%;
+}

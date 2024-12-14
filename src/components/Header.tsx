@@ -1,7 +1,50 @@
-import Image from 'next/image';
-import Link from 'next/link';
+/**
+ * @file src/components/Header.tsx
+ * @lastModifiedBy 冨永善視
+ * @modified 2024年12月14日
+ * @version 0.0.1
+ * @description ヘッダーのコンポーネント。
+ * @copyright © 2024 株式会社エルブズ. All rights reserved.
+ */
 
+'use client'
+
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import ImageSlider from './ImageSlider';
+
+/**
+ * ヘッダーのコンポーネント。
+ * @returns ヘッダーのコンポーネント。
+ */
 export default function Header() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const slides = [
+    {
+      imageSrc: '/images/hero-project-agent.png',
+      alt: 'プロジェクト管理エージェント',
+      title: 'プロジェクト管理エージェント',
+      description: 'プロジェクトの詳細な情報を一元管理'
+    },
+    {
+      imageSrc: '/images/hero-task-agent.png',
+      alt: 'タスク管理エージェント',
+      title: 'タスク管理エージェント',
+      description: 'カンバンボードで効率的なタスク管理を実現'
+    },
+    {
+      imageSrc: '/images/hero-extension.png',
+      alt: 'IXVエクステンション',
+      title: 'IXVエクステンション',
+      description: '開発をよりスマートに、より効率的に'
+    }
+  ];
+
   return (
     <header className="bg-gradient-to-r from-[#1a365d] to-[#2563eb] text-white">
       <div className="container mx-auto px-6 py-16">
@@ -43,14 +86,7 @@ export default function Header() {
           </div>
           <div className="md:w-1/2">
             <div className="relative w-full h-[400px]">
-              <Image
-                src="/api/placeholder/600/400"
-                alt="ダッシュボードイメージ"
-                className="rounded-lg shadow-xl"
-                fill
-                objectFit="cover"
-                priority
-              />
+              {isClient && <ImageSlider slides={slides} />}
             </div>
           </div>
         </div>
