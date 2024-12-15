@@ -87,7 +87,15 @@ export default function Header() {
               <h2 className="text-xl font-bold mb-4">【重要なお知らせ】</h2>
               <p className="mb-4">
                 事前登録を完了いただいている皆様には、クローズドβ版の優先的なご案内を差し上げますが、
-                正式にクローズドβ版をご利用いただくには、専用の申込フォームにてお申し込みいただく必要がございます。
+                正式にクローズドβ版をご利用いただくには、
+                <Link
+                  href="#signup"
+                  className="underline"
+                  scroll={true}
+                >
+                  本ページの申込フォーム
+                </Link>
+                にてお申し込みいただく必要がございます。
               </p>
             </div>
           </div>
