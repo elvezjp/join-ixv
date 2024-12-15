@@ -83,6 +83,13 @@ export default function Header() {
                 詳細を見る
               </Link>
             </div>
+            <div className="rounded-lg border border-white p-4 mt-8 md:mr-4">
+              <h2 className="text-xl font-bold mb-4">【重要なお知らせ】</h2>
+              <p className="mb-4">
+                事前登録を完了いただいている皆様には、クローズドβ版の優先的なご案内を差し上げますが、
+                正式にクローズドβ版をご利用いただくには、専用の申込フォームにてお申し込みいただく必要がございます。
+              </p>
+            </div>
           </div>
           <div className="md:w-1/2">
             <div className="relative w-full h-[400px]">

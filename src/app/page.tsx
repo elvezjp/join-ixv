@@ -10,7 +10,6 @@
 
 import { useState } from 'react';
 import Header from '@/components/Header';
-import Announcement from '@/components/Announcement';
 import Features from '@/components/Features';
 import SignupForm from '@/components/SignupForm';
 import TermsModal from '@/components/TermsModal';
@@ -25,7 +24,6 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <Header />
-      <Announcement />
       <Features />
       <SignupForm onOpenModal={handleOpenModal} />
       <TermsModal isOpen={isModalOpen} onClose={handleCloseModal} />
