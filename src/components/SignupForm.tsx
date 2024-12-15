@@ -9,6 +9,7 @@
 
 import { FormEvent, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
+import NoticeModal from './NoticeModal';
 
 // 申込みフォームのプロパティ型
 interface SignupFormProps {
@@ -24,6 +25,7 @@ export default function SignupForm({ onOpenModal }: SignupFormProps) {
   const [isAgreed, setIsAgreed] = useState(false);
   const [isAcknowledged, setIsAcknowledged] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
+  const [isNoticeModalOpen, setIsNoticeModalOpen] = useState(false);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -126,7 +128,14 @@ export default function SignupForm({ onOpenModal }: SignupFormProps) {
                 onChange={(e) => setIsAcknowledged(e.target.checked)}
               />
               <label htmlFor="acknowledgement" className="text-gray-700">
-                申込留意点について了解します
+                <button
+                  type="button"
+                  onClick={() => setIsNoticeModalOpen(true)}
+                  className="text-blue-600 underline"
+                >
+                  申込留意点
+                </button>
+                について了解します
               </label>
             </div>
             <div>
@@ -161,6 +170,7 @@ export default function SignupForm({ onOpenModal }: SignupFormProps) {
             申込む
           </button>
         </form>
+        <NoticeModal isOpen={isNoticeModalOpen} onClose={() => setIsNoticeModalOpen(false)} />
       </div>
     </section>
   );
