@@ -53,6 +53,30 @@ export default function Features() {
 					</div>
 				</div>
 			</section>
+
+			<section id="why-ixv" className="py-20 bg-white">
+				<div className="container mx-auto px-6">
+					<h2 className="text-3xl font-bold text-center mb-8">なぜIXVなのか？</h2>
+					<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+						<div className="feature-card bg-gray-100 p-6 rounded-lg shadow-lg">
+							<h3 className="text-xl font-bold text-blue-600 mb-4">シンプルな操作性</h3>
+							<p>複雑なバージョン管理は不要。直感的なインターフェースで、すぐに使い始められます。</p>
+						</div>
+						<div className="feature-card bg-gray-100 p-6 rounded-lg shadow-lg">
+							<h3 className="text-xl font-bold text-blue-600 mb-4">安全性の確保</h3>
+							<p>AIによる変更分析と影響範囲の可視化。リスクを最小限に抑えた開発が可能です。</p>
+						</div>
+						<div className="feature-card bg-gray-100 p-6 rounded-lg shadow-lg">
+							<h3 className="text-xl font-bold text-blue-600 mb-4">生産性の向上</h3>
+							<p>自動化された作業フローとAIサポートにより、チームの生産性が大幅に向上します。</p>
+						</div>
+						<div className="feature-card bg-gray-100 p-6 rounded-lg shadow-lg">
+							<h3 className="text-xl font-bold text-blue-600 mb-4">チーム連携の強化</h3>
+							<p>リアルタイムな情報共有と進捗の可視化で、チームの連携がさらに強化されます。</p>
+						</div>
+					</div>
+				</div>
+			</section>
 		</>
 	);
 	}
