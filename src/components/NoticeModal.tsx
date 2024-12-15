@@ -68,8 +68,8 @@ export default function NoticeModal({ isOpen, onClose }: NoticeModalProps) {
             <h3 className="font-bold text-lg mb-4">クローズドβ版リリースの目的</h3>
             <p className="mb-6">本クローズドβ版は、当社が考える次世代AI開発ツール「IXV」のコンセプトをご確認いただくための準備段階として提供するものです。IXVの機能や可能性を体験していただき、フィードバックをいただくことを目的としています。</p>
 
-            <h3 className="font-bold text-lg mb-4">ご住所や会社名の正確な入力をお願いします</h3>
-            <p className="mb-6">お申込みフォームでは会社名、住所、メールアドレスなどの必要事項を正確にご入力ください。正確な情報のご提供により、円滑なご案内が可能となります。</p>
+            <h3 className="font-bold text-lg mb-4">会社名などの正確な入力をお願いします</h3>
+            <p className="mb-6">お申込みフォームでは、会社名、メールアドレスなどを正確にご入力ください。これにより、円滑なご案内が可能となります。</p>
 
             <h3 className="font-bold text-lg mb-4">利用規約への同意</h3>
             <p className="mb-6">クローズドβ版のご利用には、当社の利用規約へのご同意が必須です。詳細はお申込みフォームに記載されておりますので、内容をご確認のうえご同意ください。</p>
