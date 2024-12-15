@@ -7,8 +7,6 @@
  * @copyright © 2024 株式会社エルブズ. All rights reserved.
  */
 
-import Link from 'next/link';
-
 export default function Announcement() {
   return (
     <section className="bg-gray-50 py-8">
