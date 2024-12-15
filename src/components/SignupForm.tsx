@@ -54,7 +54,7 @@ export default function SignupForm({ onOpenModal }: SignupFormProps) {
     <section id="signup" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="flex justify-center mb-8">
-          <img src="/join-ixv/images/IXV-logo.png" alt="IXVロゴ" className="h-16" />
+          <img src="/join-ixv/images/IXV-logo.png" alt="IXVロゴ" className="h-64" />
         </div>
         <h2 className="text-3xl font-bold text-center mb-4">クローズドβ版申込み</h2>
         <p className="text-center text-gray-700 mb-4">全ての項目が必須です</p>
