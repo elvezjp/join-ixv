@@ -133,7 +133,7 @@ export default function SignupForm({ onOpenModal }: SignupFormProps) {
                   onClick={() => setIsNoticeModalOpen(true)}
                   className="text-blue-600 underline"
                 >
-                  申込留意点
+                  お申込み留意点
                 </button>
                 について了解します
               </label>
