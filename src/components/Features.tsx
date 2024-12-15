@@ -12,7 +12,7 @@ export default function Features() {
 		<>
 			<section id="features" className="py-20 bg-white">
 				<div className="container mx-auto px-6">
-					<h2 className="text-3xl font-bold text-center mb-8">IXVの特徴</h2>
+					<h2 className="text-3xl font-bold text-center mb-8 text-[#3F62A7]">IXVの特徴</h2>
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 						<div className="feature-card bg-gray-100 p-6 rounded-lg shadow-lg">
 							<h3 className="text-xl font-bold text-blue-600 mb-4">上流工程の効率化</h3>
@@ -32,7 +32,7 @@ export default function Features() {
 
 			<section id="challenges" className="py-20 bg-white">
 				<div className="container mx-auto px-6">
-					<h2 className="text-3xl font-bold text-center mb-8">日本のソフトウェア開発の課題と解決</h2>
+					<h2 className="text-3xl font-bold text-center mb-8 text-[#3F62A7]">日本のソフトウェア開発の課題と解決</h2>
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 						<div className="feature-card bg-gray-100 p-6 rounded-lg shadow-lg">
 							<h3 className="text-xl font-bold text-blue-600 mb-4">主な課題</h3>
@@ -56,7 +56,7 @@ export default function Features() {
 
 			<section id="why-ixv" className="py-20 bg-white">
 				<div className="container mx-auto px-6">
-					<h2 className="text-3xl font-bold text-center mb-8">なぜIXVなのか？</h2>
+					<h2 className="text-3xl font-bold text-center mb-8 text-[#3F62A7]">なぜIXVなのか？</h2>
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 						<div className="feature-card bg-gray-100 p-6 rounded-lg shadow-lg">
 							<h3 className="text-xl font-bold text-blue-600 mb-4">シンプルな操作性</h3>
