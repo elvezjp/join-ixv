@@ -68,11 +68,11 @@ export default function TermsModal({ isOpen, onClose }: TermsModalProps) {
       <div className="fixed inset-0 flex items-center justify-center p-4">
         <div className={`modal-content bg-white rounded-lg w-full max-w-2xl ${animationState}`}>
           <div className="modal-header p-6 border-b">
-            <h2 className="text-2xl font-bold">クローズドベータ版利用規約</h2>
+            <h2 className="text-2xl font-bold">クローズドβ版利用規約</h2>
           </div>
 
           <div className="modal-body p-6">
-            <p className="mb-6">株式会社エルブズ（以下「当社」といいます）は、当社が提供するクローズドベータ版（以下「本サービス」といいます）に関する利用規約を以下の通り定めます。本サービスの利用者（以下「利用者」といいます）は、本規約に同意した上でご利用ください。</p>
+            <p className="mb-6">株式会社エルブズ（以下「当社」といいます）は、当社が提供するクローズドβ版（以下「本サービス」といいます）に関する利用規約を以下の通り定めます。本サービスの利用者（以下「利用者」といいます）は、本規約に同意した上でご利用ください。</p>
 
             <h3 className="font-bold mt-6">第1条（目的）</h3>
             <p>本規約は、本サービスを利用する利用者に適用されます。本サービスは、サービスの機能確認および改善を目的として提供されるものであり、利用者は以下の条件に従ってこれを利用するものとします。</p>
@@ -80,7 +80,7 @@ export default function TermsModal({ isOpen, onClose }: TermsModalProps) {
             <h3 className="font-bold mt-6">第2条（利用資格）</h3>
             <ol className="list-decimal pl-6">
               <li>利用者は、当社が提供する本サービスを正当かつ善良な方法で利用することができます。</li>
-              <li>利用者は、クローズドベータ版の目的に沿った利用を行い、以下に該当する行為を行わないことに同意します。
+              <li>利用者は、クローズドβ版の目的に沿った利用を行い、以下に該当する行為を行わないことに同意します。
                 <ul className="list-disc pl-6 mt-2">
                   <li>他者の知的財産権を侵害する行為</li>
                   <li>本サービスに関する情報を無断で第三者に公開または共有する行為</li>
