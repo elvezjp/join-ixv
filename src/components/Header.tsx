@@ -29,38 +29,19 @@ export default function Header() {
     setIsClient(true);
   }, []);
 
-  const slides = [
-    {
-      imageSrc: '/join-ixv/images/hero-project-agent.png',
-      alt: '上流工程の効率化',
-      title: '上流工程の効率化',
-      description: 'AIを活用して要件定義書作成を支援し、品質のばらつきを低減します。'
-    },
-    {
-      imageSrc: '/join-ixv/images/hero-task-agent.png',
-      alt: 'プロジェクト管理の最適化',
-      title: 'プロジェクト管理の最適化',
-      description: 'AIによる進捗管理の自動化や最適なリソース配分提案を実現します。'
-    },
-    {
-      imageSrc: '/join-ixv/images/hero-extension.png',
-      alt: '開発プロセスの改善',
-      title: '開発プロセスの改善',
-      description: 'コード統合の支援を行い、品質を向上させるとともに、チームの成果を最大化します。'
-    }
-  ];
+  const slides = t.header.slides;
 
   return (
     <header className="bg-gradient-to-r from-[#1a365d] to-[#2563eb] text-white">
       <div className="container mx-auto px-6 py-16">
         <nav className="flex justify-between items-center mb-16">
-          <div className="text-2xl font-bold">IXV</div>
+          <div className="text-2xl font-bold">{t.header.logo}</div>
           <Link
             href="#signup"
             className="bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-blue-50 transition"
             scroll={true}
           >
-            クローズドβ版申込み
+            {t.header.signup}
           </Link>
         </nav>
         <div className="flex flex-col md:flex-row items-center justify-between">
@@ -79,29 +60,28 @@ export default function Header() {
                 className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition"
                 scroll={true}
               >
-                クローズドβ版申込み
+                {t.header.signup}
               </Link>
               <Link
                 href="#features"
                 className="border border-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition"
                 scroll={true}
               >
-                詳細を見る
+                {t.header.details}
               </Link>
             </div>
             <div className="rounded-lg border border-white p-4 mt-8 md:mr-4">
-              <h2 className="text-xl font-bold mb-4">【重要なお知らせ】</h2>
+              <h2 className="text-xl font-bold mb-4">{t.header.notice.title}</h2>
               <p className="mb-4">
-                事前登録を完了いただいている皆様には、クローズドβ版の優先的なご案内を差し上げますが、
-                正式にクローズドβ版をご利用いただくには、
+                {t.header.notice.message}
                 <Link
                   href="#signup"
                   className="underline"
                   scroll={true}
                 >
-                  本ページの申込フォーム
+                  {t.header.notice.formLink}
                 </Link>
-                にてお申し込みいただく必要がございます。
+                {t.header.notice.messageEnd}
               </p>
             </div>
           </div>
