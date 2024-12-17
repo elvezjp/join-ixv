@@ -14,7 +14,7 @@ import Features from '@/components/Features';
 import SignupForm from '@/components/SignupForm';
 import TermsModal from '@/components/TermsModal';
 import Footer from '@/components/Footer';
-
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -23,6 +23,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen">
+      <LanguageSwitcher />
       <Header />
       <Features />
       <SignupForm onOpenModal={handleOpenModal} />

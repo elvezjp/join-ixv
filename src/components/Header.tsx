@@ -1,8 +1,8 @@
 /**
  * @file src/components/Header.tsx
  * @lastModifiedBy 冨永善視
- * @modified 2024年12月14日
- * @version 0.0.1
+ * @modified 2024年12月17日
+ * @version 0.0.2
  * @description ヘッダーのコンポーネント。
  * @copyright © 2024 株式会社エルブズ. All rights reserved.
  */
@@ -12,6 +12,9 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import ImageSlider from './ImageSlider';
+import { useLanguage } from '@/contexts/LanguageContext';
+import ja from '@/locales/ja';
+import en from '@/locales/en';
 
 /**
  * ヘッダーのコンポーネント。
@@ -19,6 +22,8 @@ import ImageSlider from './ImageSlider';
  */
 export default function Header() {
   const [isClient, setIsClient] = useState(false);
+  const { language } = useLanguage();
+  const t = language === 'ja' ? ja : en;
 
   useEffect(() => {
     setIsClient(true);
@@ -61,11 +66,11 @@ export default function Header() {
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="md:w-1/2 mb-8 md:mb-0">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              開発をもっと<br />シンプルに
+              {t.header.title}
             </h1>
             <p className="text-xl mb-8">
-              IXV（イクシブ）は、AIを活用した次世代の開発ツール。<br />
-              チーム開発をよりスマートに、より効率的に。
+              {t.header.subtitle}<br />
+              {t.header.description}
             </p>
             <div className="space-x-4">
               <Link
