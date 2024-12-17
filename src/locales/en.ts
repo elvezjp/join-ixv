@@ -8,9 +8,10 @@
  */
 export default {
   header: {
-    title: 'Simplify Development',
-    subtitle: 'IXV is an AI-powered next-generation development tool.',
-    description: 'Make team development smarter and more efficient.',
+    title1: 'Simplify',
+    title2: 'Development',
+    description1: 'IXV is an AI-powered next-generation development tool.',
+    description2: 'Make team development smarter and more efficient.',
     signup: 'Apply for Closed Beta',
     details: 'Learn More'
   },

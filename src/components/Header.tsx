@@ -66,11 +66,12 @@ export default function Header() {
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="md:w-1/2 mb-8 md:mb-0">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              {t.header.title}
+              {t.header.title1}<br />
+              {t.header.title2}
             </h1>
             <p className="text-xl mb-8">
-              {t.header.subtitle}<br />
-              {t.header.description}
+              {t.header.description1}<br />
+              {t.header.description2}
             </p>
             <div className="space-x-4">
               <Link

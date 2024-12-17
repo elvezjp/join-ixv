@@ -8,9 +8,10 @@
  */
 export default {
   header: {
-    title: '開発をもっとシンプルに',
-    subtitle: 'IXV（イクシブ）は、AIを活用した次世代の開発ツール。',
-    description: 'チーム開発をよりスマートに、より効率的に。',
+    title1: '開発をもっと',
+    title2: 'シンプルに',
+    description1: 'IXV（イクシブ）は、AIを活用した次世代の開発ツール。',
+    description2: 'チーム開発をよりスマートに、より効率的に。',
     signup: 'クローズドβ版申込み',
     details: '詳細を見る'
   },
