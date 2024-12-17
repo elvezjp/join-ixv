@@ -42,5 +42,61 @@ export default {
       }
     ]
   },
-  // 他のセクションも同様に
+  features: {
+    title: 'IXV Features',
+    cards: [
+      {
+        title: 'Upstream Process Optimization',
+        description: 'AI support for requirements documentation and quality standardization.'
+      },
+      {
+        title: 'Project Management Optimization',
+        description: 'Automated progress tracking and optimal resource allocation with AI.'
+      },
+      {
+        title: 'Development Process Improvement',
+        description: 'Code integration support to enhance quality and maximize team performance.'
+      }
+    ]
+  },
+  challenges: {
+    title: 'Software Development Challenges in Japan and Solutions',
+    problems: {
+      title: 'Key Challenges',
+      items: [
+        'Ambiguous requirements and stakeholder misalignment',
+        'Difficulty in task division and resource assignment',
+        'Personalized development and knowledge sharing challenges'
+      ]
+    },
+    solutions: {
+      title: 'IXV Solutions',
+      items: [
+        'AI-powered requirements documentation support and automated quality checks',
+        'Optimal resource allocation suggestions and automated progress management',
+        'Code integration support and knowledge sharing promotion'
+      ]
+    }
+  },
+  whyIxv: {
+    title: 'Why IXV?',
+    cards: [
+      {
+        title: 'Simple Operation',
+        description: 'No complex version control needed. Start using immediately with an intuitive interface.'
+      },
+      {
+        title: 'Enhanced Security',
+        description: 'AI-powered change analysis and impact visualization. Develop with minimal risk.'
+      },
+      {
+        title: 'Increased Productivity',
+        description: 'Automated workflows and AI support significantly boost team productivity.'
+      },
+      {
+        title: 'Strengthened Team Collaboration',
+        description: 'Real-time information sharing and progress visualization enhance team coordination.'
+      }
+    ]
+  }
 } as const;
