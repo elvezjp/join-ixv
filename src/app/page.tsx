@@ -1,8 +1,8 @@
 /**
  * @file src/app/page.tsx
  * @lastModifiedBy 冨永善視
- * @modified 2024年12月15日
- * @version 0.0.1
+ * @modified 2024年12月17日
+ * @version 0.0.2
  * @description メインのコンポーネント。
  * @copyright © 2024 株式会社エルブズ. All rights reserved.
  */
