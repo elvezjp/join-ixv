@@ -12,11 +12,21 @@ export default function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage();
 
   return (
-    <button
-      onClick={() => setLanguage(language === 'ja' ? 'en' : 'ja')}
-      className="fixed top-4 right-4 bg-white text-blue-600 px-4 py-2 rounded-full shadow-md hover:bg-blue-50 transition"
-    >
-      {language === 'ja' ? '日本語' : 'English'}
-    </button>
+    <div className="fixed top-6 right-6 flex items-center">
+      <div className="flex items-center space-x-2">
+        <button
+          className={`px-3 py-1 rounded-full border ${language === 'ja' ? 'bg-blue-600 text-white border-white' : 'bg-gray-200 text-gray-500 border-transparent'}`}
+          onClick={() => setLanguage('ja')}
+        >
+          JP
+        </button>
+        <button
+          className={`px-3 py-1 rounded-full border ${language === 'en' ? 'bg-blue-600 text-white border-white' : 'bg-gray-200 text-gray-500 border-transparent'}`}
+          onClick={() => setLanguage('en')}
+        >
+          EN
+        </button>
+      </div>
+    </div>
   );
 }
