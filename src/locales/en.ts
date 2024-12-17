@@ -98,5 +98,30 @@ export default {
         description: 'Real-time information sharing and progress visualization enhance team coordination.'
       }
     ]
+  },
+  signup: {
+    logoAlt: 'IXV Logo',
+    title: 'Apply for Closed Beta',
+    subtitle: 'All fields are required',
+    form: {
+      company: 'Company Name',
+      department: 'Department',
+      phone: 'Phone Number',
+      email: 'Email Address',
+      name: 'Full Name',
+      acknowledgement: {
+        button: 'Application Notes',
+        text: ' I understand the application notes'
+      },
+      agreement: {
+        button: 'Terms of Service',
+        text: ' I agree to the terms of service'
+      },
+      submit: 'Apply'
+    },
+    messages: {
+      success: 'Your application has been received. Our team will contact you shortly.',
+      error: 'Failed to submit the application. Please try again later.'
+    }
   }
 } as const;

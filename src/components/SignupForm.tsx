@@ -10,6 +10,9 @@
 import { FormEvent, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import NoticeModal from './NoticeModal';
+import { useLanguage } from '@/contexts/LanguageContext';
+import ja from '@/locales/ja';
+import en from '@/locales/en';
 
 // 申込みフォームのプロパティ型
 interface SignupFormProps {
@@ -26,6 +29,8 @@ export default function SignupForm({ onOpenModal }: SignupFormProps) {
   const [isAcknowledged, setIsAcknowledged] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
   const [isNoticeModalOpen, setIsNoticeModalOpen] = useState(false);
+  const { language } = useLanguage();
+  const t = language === 'ja' ? ja : en;
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -41,12 +46,11 @@ export default function SignupForm({ onOpenModal }: SignupFormProps) {
       );
 
       if (result.text === 'OK') {
-        alert('申込みを受け付けました。担当者より追ってご連絡させていただきます。');
+        alert(t.signup.messages.success);
         formRef.current.reset();
       }
     } catch (error) {
-      console.error('送信エラー:', error);
-      alert('申込みの送信に失敗しました。お手数ですが、時間をおいて再度お試しください。');
+      alert(t.signup.messages.error);
     }
   };
 
@@ -54,14 +58,14 @@ export default function SignupForm({ onOpenModal }: SignupFormProps) {
     <section id="signup" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="flex justify-center mb-8">
-          <img src="/join-ixv/images/IXV-logo.png" alt="IXVロゴ" className="h-64" />
+          <img src="/join-ixv/images/IXV-logo.png" alt={t.signup.logoAlt} className="h-64" />
         </div>
-        <h2 className="text-3xl font-bold text-center mb-4">クローズドβ版申込み</h2>
-        <p className="text-center text-gray-700 mb-4">全ての項目が必須です</p>
+        <h2 className="text-3xl font-bold text-center mb-4">{t.signup.title}</h2>
+        <p className="text-center text-gray-700 mb-4">{t.signup.requiredFields}</p>
         <form ref={formRef} onSubmit={handleSubmit} className="bg-white p-8 rounded-xl shadow-lg max-w-xl mx-auto">
           <div className="mb-4">
             <label htmlFor="company" className="block text-gray-700 font-semibold mb-2">
-              会社名
+              {t.signup.form.company}
             </label>
             <input
               type="text"
@@ -73,7 +77,7 @@ export default function SignupForm({ onOpenModal }: SignupFormProps) {
           </div>
           <div className="mb-4">
             <label htmlFor="department" className="block text-gray-700 font-semibold mb-2">
-              部署名
+              {t.signup.form.department}
             </label>
             <input
               type="text"
@@ -85,7 +89,7 @@ export default function SignupForm({ onOpenModal }: SignupFormProps) {
           </div>
           <div className="mb-4">
             <label htmlFor="phone" className="block text-gray-700 font-semibold mb-2">
-              電話番号
+              {t.signup.form.phone}
             </label>
             <input
               type="tel"
@@ -97,7 +101,7 @@ export default function SignupForm({ onOpenModal }: SignupFormProps) {
           </div>
           <div className="mb-4">
             <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
-              メールアドレス
+              {t.signup.form.email}
             </label>
             <input
               type="email"
@@ -109,7 +113,7 @@ export default function SignupForm({ onOpenModal }: SignupFormProps) {
           </div>
           <div className="mb-4">
             <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">
-              氏名
+              {t.signup.form.name}
             </label>
             <input
               type="text"
@@ -136,9 +140,9 @@ export default function SignupForm({ onOpenModal }: SignupFormProps) {
                   onClick={() => setIsNoticeModalOpen(true)}
                   className="text-blue-600 underline"
                 >
-                  お申込み留意点
+                  {t.signup.form.acknowledgement.button}
                 </button>
-                について了解します
+                {t.signup.form.acknowledgement.text}
               </label>
             </div>
             <div>
@@ -157,9 +161,9 @@ export default function SignupForm({ onOpenModal }: SignupFormProps) {
                   onClick={onOpenModal}
                   className="text-blue-600 underline"
                 >
-                  利用規約
+                  {t.signup.form.agreement.button}
                 </button>
-                に同意します
+                {t.signup.form.agreement.text}
               </label>
             </div>
           </div>
@@ -170,7 +174,7 @@ export default function SignupForm({ onOpenModal }: SignupFormProps) {
             }`}
             disabled={!isAgreed || !isAcknowledged}
           >
-            申込む
+            {t.signup.form.submit}
           </button>
         </form>
         <NoticeModal isOpen={isNoticeModalOpen} onClose={() => setIsNoticeModalOpen(false)} />

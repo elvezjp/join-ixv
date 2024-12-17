@@ -98,5 +98,30 @@ export default {
         description: 'リアルタイムな情報共有と進捗の可視化で、チームの連携がさらに強化されます。'
       }
     ]
+  },
+  signup: {
+    logoAlt: 'IXVロゴ',
+    title: 'クローズドβ版申込み',
+    subtitle: '全ての項目が必須です',
+    form: {
+      company: '会社名',
+      department: '部署名',
+      phone: '電話番号',
+      email: 'メールアドレス',
+      name: '氏名',
+      acknowledgement: {
+        button: 'お申込み留意点',
+        text: 'について了解します'
+      },
+      agreement: {
+        button: '利用規約',
+        text: 'に同意します'
+      },
+      submit: '申込む'
+    },
+    messages: {
+      success: '申込みを受け付けました。担当者より追ってご連絡させていただきます。',
+      error: '申込みの送信に失敗しました。お手数ですが、時間をおいて再度お試しください。'
+    }
   }
 } as const;
