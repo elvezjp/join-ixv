@@ -8,6 +8,9 @@
  */
 
 import { useEffect, useCallback, useState } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
+import ja from '@/locales/ja';
+import en from '@/locales/en';
 
 interface NoticeModalProps {
   isOpen: boolean;
@@ -15,6 +18,8 @@ interface NoticeModalProps {
 }
 
 export default function NoticeModal({ isOpen, onClose }: NoticeModalProps) {
+  const { language } = useLanguage();
+  const t = language === 'ja' ? ja : en;
   const [animationState, setAnimationState] = useState<'entering' | 'entered' | 'exiting' | 'exited'>('exited');
 
   useEffect(() => {
@@ -61,21 +66,21 @@ export default function NoticeModal({ isOpen, onClose }: NoticeModalProps) {
       <div className="fixed inset-0 flex items-center justify-center p-4">
         <div className={`modal-content bg-white rounded-lg w-full max-w-2xl ${animationState}`}>
           <div className="modal-header p-6 border-b">
-            <h2 className="text-2xl font-bold">お申込みに際してのご留意点</h2>
+            <h2 className="text-2xl font-bold">{t.noticeModal.title}</h2>
           </div>
 
           <div className="modal-body p-6">
-            <h3 className="font-bold text-lg mb-4">クローズドβ版リリースの目的</h3>
-            <p className="mb-6">本クローズドβ版は、当社が考える次世代AI開発ツール「IXV」のコンセプトをご確認いただくための準備段階として提供するものです。IXVの機能や可能性を体験していただき、フィードバックをいただくことを目的としています。</p>
+            <h3 className="font-bold text-lg mb-4">{t.noticeModal.sections[0].title}</h3>
+            <p className="mb-6">{t.noticeModal.sections[0].content}</p>
 
-            <h3 className="font-bold text-lg mb-4">会社名などの正確な入力をお願いします</h3>
-            <p className="mb-6">お申込みフォームでは、会社名、メールアドレスなどを正確にご入力ください。これにより、円滑なご案内が可能となります。</p>
+            <h3 className="font-bold text-lg mb-4">{t.noticeModal.sections[1].title}</h3>
+            <p className="mb-6">{t.noticeModal.sections[1].content}</p>
 
-            <h3 className="font-bold text-lg mb-4">利用規約への同意</h3>
-            <p className="mb-6">クローズドβ版のご利用には、当社の利用規約へのご同意が必須です。詳細はお申込みフォームに記載されておりますので、内容をご確認のうえご同意ください。</p>
+            <h3 className="font-bold text-lg mb-4">{t.noticeModal.sections[2].title}</h3>
+            <p className="mb-6">{t.noticeModal.sections[2].content}</p>
 
-            <h3 className="font-bold text-lg mb-4">ご参加までのプロセス</h3>
-            <p>お申込み後、選考を経て参加が確定したお客様には、当社より個別にご連絡を差し上げます。なお、参加基準に関する詳細は非公開とさせていただいておりますので、ご了承ください。</p>
+            <h3 className="font-bold text-lg mb-4">{t.noticeModal.sections[3].title}</h3>
+            <p className="mb-6">{t.noticeModal.sections[3].content}</p>
           </div>
 
           <div className="modal-footer border-t p-4 flex justify-end bg-gray-50">
@@ -83,7 +88,7 @@ export default function NoticeModal({ isOpen, onClose }: NoticeModalProps) {
               onClick={onClose}
               className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
             >
-              閉じる
+              {t.noticeModal.closeButton}
             </button>
           </div>
         </div>

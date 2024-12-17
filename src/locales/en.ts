@@ -123,5 +123,27 @@ export default {
       success: 'Your application has been received. Our team will contact you shortly.',
       error: 'Failed to submit the application. Please try again later.'
     }
+  },
+  noticeModal: {
+    title: 'Important Notes About Application',
+    sections: [
+      {
+        title: 'Purpose of Closed Beta Release',
+        content: 'This closed beta version is provided as a preparatory stage to validate the concept of our next-generation AI development tool "IXV". It aims to let you experience IXV\'s features and possibilities, and provide feedback.'
+      },
+      {
+        title: 'Please Enter Accurate Company Information',
+        content: 'Please enter accurate information such as company name and email address in the application form. This ensures smooth communication.'
+      },
+      {
+        title: 'Terms of Service Agreement',
+        content: 'Use of the closed beta version requires agreement to our terms of service. Please review the details provided in the application form before agreeing.'
+      },
+      {
+        title: 'Application Process',
+        content: 'After application, we will contact selected participants individually. Please note that the selection criteria details are not publicly disclosed.'
+      }
+    ],
+    closeButton: 'Close'
   }
 } as const;
