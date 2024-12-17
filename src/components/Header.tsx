@@ -29,7 +29,26 @@ export default function Header() {
     setIsClient(true);
   }, []);
 
-  const slides = t.header.slides;
+  const slides = [
+    {
+      imageSrc: '/join-ixv/images/hero-project-agent.png',
+      alt: t.header.slides[0].alt,
+      title: t.header.slides[0].title,
+      description: t.header.slides[0].description
+    },
+    {
+      imageSrc: '/join-ixv/images/hero-task-agent.png',
+      alt: t.header.slides[1].alt,
+      title: t.header.slides[1].title,
+      description: t.header.slides[1].description
+    },
+    {
+      imageSrc: '/join-ixv/images/hero-extension.png',
+      alt: t.header.slides[2].alt,
+      title: t.header.slides[2].title,
+      description: t.header.slides[2].description
+    }
+  ];
 
   return (
     <header className="bg-gradient-to-r from-[#1a365d] to-[#2563eb] text-white">

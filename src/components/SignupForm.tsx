@@ -50,6 +50,7 @@ export default function SignupForm({ onOpenModal }: SignupFormProps) {
         formRef.current.reset();
       }
     } catch (error) {
+      console.error(error);
       alert(t.signup.messages.error);
     }
   };
@@ -61,7 +62,7 @@ export default function SignupForm({ onOpenModal }: SignupFormProps) {
           <img src="/join-ixv/images/IXV-logo.png" alt={t.signup.logoAlt} className="h-64" />
         </div>
         <h2 className="text-3xl font-bold text-center mb-4">{t.signup.title}</h2>
-        <p className="text-center text-gray-700 mb-4">{t.signup.requiredFields}</p>
+        <p className="text-center text-gray-700 mb-4">{t.signup.note}</p>
         <form ref={formRef} onSubmit={handleSubmit} className="bg-white p-8 rounded-xl shadow-lg max-w-xl mx-auto">
           <div className="mb-4">
             <label htmlFor="company" className="block text-gray-700 font-semibold mb-2">

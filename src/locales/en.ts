@@ -23,19 +23,16 @@ export default {
     },
     slides: [
       {
-        imageSrc: '/join-ixv/images/hero-project-agent.png',
         alt: 'Upstream Process Optimization',
         title: 'Upstream Process Optimization',
         description: 'AI support for requirements documentation and quality standardization.'
       },
       {
-        imageSrc: '/join-ixv/images/hero-task-agent.png',
         alt: 'Project Management Optimization',
         title: 'Project Management Optimization',
         description: 'Automated progress tracking and optimal resource allocation with AI.'
       },
       {
-        imageSrc: '/join-ixv/images/hero-extension.png',
         alt: 'Development Process Improvement',
         title: 'Development Process Improvement',
         description: 'Code integration support to enhance quality and maximize team performance.'
@@ -102,7 +99,7 @@ export default {
   signup: {
     logoAlt: 'IXV Logo',
     title: 'Apply for Closed Beta',
-    subtitle: 'All fields are required',
+    note: 'All fields are required',
     form: {
       company: 'Company Name',
       department: 'Department',

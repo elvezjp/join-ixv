@@ -23,19 +23,16 @@ export default {
     },
     slides: [
       {
-        imageSrc: '/join-ixv/images/hero-project-agent.png',
         alt: '上流工程の効率化',
         title: '上流工程の効率化',
         description: 'AIを活用して要件定義書作成を支援し、品質のばらつきを低減します。'
       },
       {
-        imageSrc: '/join-ixv/images/hero-task-agent.png',
         alt: 'プロジェクト管理の最適化',
         title: 'プロジェクト管理の最適化',
         description: 'AIによる進捗管理の自動化や最適なリソース配分提案を実現します。'
       },
       {
-        imageSrc: '/join-ixv/images/hero-extension.png',
         alt: '開発プロセスの改善',
         title: '開発プロセスの改善',
         description: 'コード統合の支援を行い、品質を向上させるとともに、チームの成果を最大化します。'
@@ -102,7 +99,7 @@ export default {
   signup: {
     logoAlt: 'IXVロゴ',
     title: 'クローズドβ版申込み',
-    subtitle: '全ての項目が必須です',
+    note: '全ての項目が必須です',
     form: {
       company: '会社名',
       department: '部署名',
