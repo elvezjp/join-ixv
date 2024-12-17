@@ -145,5 +145,81 @@ export default {
       }
     ],
     closeButton: 'Close'
+  },
+  termsModal: {
+    title: 'Closed Beta Terms of Service',
+    introduction: 'ELVEZ Inc. (hereinafter referred to as "the Company") establishes the following terms of service for the closed beta version (hereinafter referred to as "the Service") provided by the Company. Users of the Service (hereinafter referred to as "Users") must agree to these terms before using the Service.',
+    sections: [
+      {
+        title: 'Article 1 (Purpose)',
+        items: [
+          'These terms apply to Users of the Service. The Service is provided as a means to verify and improve service functionality, and Users shall use it in accordance with the following conditions.'
+        ]
+      },
+      {
+        title: 'Article 2 (Usage Qualifications)',
+        items: [
+          'Users may use the Service provided by the Company in a proper and appropriate manner.',
+          'Users agree to use the closed beta version in accordance with its intended purpose and not to engage in the following activities:'
+        ],
+        subItems: [
+          'Infringing on the intellectual property rights of others',
+          'Disclosing or sharing information about the Service to third parties without authorization',
+          'Reverse engineering the Service specifications'
+        ]
+      },
+      {
+        title: 'Article 3 (Confidentiality)',
+        items: [
+          'Users shall not disclose or leak any information related to the Service (hereinafter referred to as "Confidential Information") to third parties.',
+          'Confidential Information includes Service specifications, bugs, improvement suggestions, provided materials, and other non-public information.'
+        ]
+      },
+      {
+        title: 'Article 4 (Survey Cooperation)',
+        items: [
+          'Users shall cooperate with the Company\'s survey activities regarding the Service. Survey activities include interviews, questionnaires, and usage reports.',
+          'Survey results will only be used for Service improvement purposes and will not be disclosed externally in a way that identifies individuals.'
+        ]
+      },
+      {
+        title: 'Article 5 (Disclaimer)',
+        items: [
+          'The Service is provided for testing purposes and comes with no warranties of any kind.',
+          'The Company shall not be liable for any damages arising from the use of the Service.'
+        ]
+      },
+      {
+        title: 'Article 6 (Suspension and Termination)',
+        items: [
+          'The Company may suspend or terminate the use of the Service without prior notice if Users violate these terms.',
+          'Users agree not to make any claims against the Company upon termination of the Service.'
+        ]
+      },
+      {
+        title: 'Article 7 (Intellectual Property Rights)',
+        items: [
+          'All intellectual property rights related to the Service belong to the Company.',
+          'Users are prohibited from using materials, technologies, or information related to the Service without authorization.'
+        ]
+      },
+      {
+        title: 'Article 8 (Changes to Terms)',
+        items: [
+          'The Company may modify these terms as necessary.',
+          'Continued use of the Service after changes to the terms constitutes acceptance of the modified terms.'
+        ]
+      },
+      {
+        title: 'Article 9 (Governing Law and Jurisdiction)',
+        items: [
+          'These terms shall be interpreted and governed by Japanese law. Any disputes arising in connection with these terms shall be subject to the exclusive jurisdiction of the court having jurisdiction over the location of the Company\'s headquarters as the court of first instance.'
+        ]
+      }
+    ],
+    footer: {
+      date: 'Established: December 16, 2024'
+    },
+    closeButton: 'Close'
   }
 } as const;
