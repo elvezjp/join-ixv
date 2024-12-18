@@ -12,6 +12,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import ImageSlider from './ImageSlider';
+import LanguageSwitcher from './LanguageSwitcher';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ja from '@/locales/ja';
 import en from '@/locales/en';
@@ -52,7 +53,10 @@ export default function Header() {
 
   return (
     <header className="bg-gradient-to-r from-[#1a365d] to-[#2563eb] text-white">
-      <div className="container mx-auto px-6 py-16">
+      <div className="flex justify-end py-6 px-6">
+        <LanguageSwitcher />
+      </div>
+      <div className="container mx-auto px-6 py-6">
         <nav className="flex justify-between items-center mb-16">
           <div className="text-2xl font-bold">{t.header.logo}</div>
           <Link
