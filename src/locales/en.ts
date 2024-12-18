@@ -10,8 +10,8 @@ export default {
   header: {
     title1: 'Simplify',
     title2: 'Development',
-    description1: 'IXV is an AI-powered next-generation development tool.',
-    description2: 'Make team development smarter and more efficient.',
+    description1: 'IXV is an AI-powered, next-generation development tool designed to make team development smarter and more efficient.',
+    description2: '',
     signup: 'Apply for Closed Beta',
     details: 'Learn More',
     logo: 'IXV',
@@ -48,7 +48,7 @@ export default {
       },
       {
         title: 'Project Management Optimization',
-        description: 'Automated progress tracking and optimal resource allocation with AI.'
+        description: 'Leverage AI for automated progress tracking and optimized resource allocation.'
       },
       {
         title: 'Development Process Improvement',
@@ -61,7 +61,7 @@ export default {
     problems: {
       title: 'Key Challenges',
       items: [
-        'Ambiguous requirements and stakeholder misalignment',
+        'Unclear requirements and stakeholder misalignment',
         'Difficulty in task division and resource assignment',
         'Personalized development and knowledge sharing challenges'
       ]
@@ -80,11 +80,11 @@ export default {
     cards: [
       {
         title: 'Simple Operation',
-        description: 'No complex version control needed. Start using immediately with an intuitive interface.'
+        description: 'No need for complex version control. Get started immediately with an intuitive interface.'
       },
       {
         title: 'Enhanced Security',
-        description: 'AI-powered change analysis and impact visualization. Develop with minimal risk.'
+        description: 'AI-powered change analysis and impact visualization to minimize development risks.'
       },
       {
         title: 'Increased Productivity',
@@ -92,7 +92,7 @@ export default {
       },
       {
         title: 'Strengthened Team Collaboration',
-        description: 'Real-time information sharing and progress visualization enhance team coordination.'
+        description: 'Real-time information sharing and progress visualization improve team coordination.'
       }
     ]
   },
