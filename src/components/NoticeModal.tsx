@@ -1,8 +1,8 @@
 /**
  * @file src/components/NoticeModal.tsx
  * @lastModifiedBy 冨永善視
- * @modified 2024年12月17日
- * @version 0.0.2
+ * @modified 2024年12月18日
+ * @version 0.0.3
  * @description お申込みに際してのご留意点のモーダルのコンポーネント。
  * @copyright © 2024 株式会社エルブズ. All rights reserved.
  */

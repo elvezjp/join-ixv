@@ -1,8 +1,8 @@
 /**
  * @file src/components/TermsModal.tsx
  * @lastModifiedBy 冨永善視
- * @modified 2024年12月17日
- * @version 0.0.2
+ * @modified 2024年12月18日
+ * @version 0.0.3
  * @description 利用規約のモーダルのコンポーネント。
  * @copyright © 2024 株式会社エルブズ. All rights reserved.
  */

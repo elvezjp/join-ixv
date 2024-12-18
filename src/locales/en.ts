@@ -1,8 +1,8 @@
 /**
  * @file src/locales/en.ts
  * @lastModifiedBy 冨永善視
- * @modified 2024年12月17日
- * @version 0.0.2
+ * @modified 2024年12月18日
+ * @version 0.0.3
  * @description 英語の辞書ファイル。
  * @copyright © 2024 株式会社エルブズ. All rights reserved.
  */
