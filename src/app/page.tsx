@@ -8,7 +8,6 @@
  */
 'use client';
 
-import { useState } from 'react';
 import Header from '@/components/Header';
 import Features from '@/components/Features';
 import SignupForm from '@/components/SignupForm';
