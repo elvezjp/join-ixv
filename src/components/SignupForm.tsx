@@ -14,6 +14,7 @@ import TermsModal from './TermsModal';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ja from '@/locales/ja';
 import en from '@/locales/en';
+import Image from 'next/image';
 
 /**
  * 申込みフォームのコンポーネント。
@@ -55,7 +56,14 @@ export default function SignupForm() {
     <section id="signup" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="flex justify-center mb-8">
-          <img src="/join-ixv/images/IXV-logo.png" alt={t.signup.logoAlt} className="h-64" />
+          <Image
+            src="/join-ixv/images/IXV-logo.png"
+            alt={t.signup.logoAlt}
+            width={256}
+            height={256}
+            className="h-64 w-auto"
+            priority
+          />
         </div>
         <h2 className="text-3xl font-bold text-center mb-4">{t.signup.title}</h2>
         <p className="text-center text-gray-700 mb-4">{t.signup.note}</p>
