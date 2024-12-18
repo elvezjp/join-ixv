@@ -10,25 +10,21 @@
 import { FormEvent, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import NoticeModal from './NoticeModal';
+import TermsModal from './TermsModal';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ja from '@/locales/ja';
 import en from '@/locales/en';
 
-// 申込みフォームのプロパティ型
-interface SignupFormProps {
-  onOpenModal: () => void;
-}
-
 /**
  * 申込みフォームのコンポーネント。
- * @param onOpenModal - モーダルを開く関数。
  * @returns 申込みフォームのコンポーネント。
  */
-export default function SignupForm({ onOpenModal }: SignupFormProps) {
+export default function SignupForm() {
   const [isAgreed, setIsAgreed] = useState(false);
   const [isAcknowledged, setIsAcknowledged] = useState(false);
-  const formRef = useRef<HTMLFormElement>(null);
   const [isNoticeModalOpen, setIsNoticeModalOpen] = useState(false);
+  const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
   const { language } = useLanguage();
   const t = language === 'ja' ? ja : en;
 
@@ -159,7 +155,7 @@ export default function SignupForm({ onOpenModal }: SignupFormProps) {
               <label htmlFor="agreement" className="text-gray-700">
                 <button
                   type="button"
-                  onClick={onOpenModal}
+                  onClick={() => setIsTermsModalOpen(true)}
                   className="text-blue-600 underline"
                 >
                   {t.signup.form.agreement.button}
@@ -179,6 +175,7 @@ export default function SignupForm({ onOpenModal }: SignupFormProps) {
           </button>
         </form>
         <NoticeModal isOpen={isNoticeModalOpen} onClose={() => setIsNoticeModalOpen(false)} />
+        <TermsModal isOpen={isTermsModalOpen} onClose={() => setIsTermsModalOpen(false)} />
       </div>
     </section>
   );
