@@ -8,7 +8,7 @@
  */
 'use client'
 
-import { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
 
 type Language = 'ja' | 'en';
@@ -29,7 +29,28 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
  * @returns 言語コンテキストプロバイダー。
  */
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>('ja');
+  const [isClient, setIsClient] = useState(false);
+  const [language, setLanguage] = useState<Language>(() => {
+    // クライアントサイドでのみlocalStorageにアクセス
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('language');
+      return (saved as Language) || 'ja';
+    }
+    return 'ja';
+  });
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('language', language);
+  }, [language]);
+
+  // クライアントサイドレンダリング前にデフォルト言語で表示されるのを防ぐため、サーバーサイドレンダリング時は何も表示しない
+  if (!isClient) {
+    return null;
+  }
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>
