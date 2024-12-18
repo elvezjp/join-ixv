@@ -12,21 +12,28 @@ export default function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage();
 
   return (
-    <div className="fixed top-6 right-6 flex items-center">
-      <div className="flex items-center space-x-2">
-        <button
-          className={`px-3 py-1 rounded-full border ${language === 'ja' ? 'bg-blue-600 text-white border-white' : 'bg-gray-200 text-gray-500 border-transparent'}`}
-          onClick={() => setLanguage('ja')}
-        >
-          JP
-        </button>
-        <button
-          className={`px-3 py-1 rounded-full border ${language === 'en' ? 'bg-blue-600 text-white border-white' : 'bg-gray-200 text-gray-500 border-transparent'}`}
-          onClick={() => setLanguage('en')}
-        >
-          EN
-        </button>
-      </div>
+    <div className="fixed top-6 right-6 flex items-center gap-3">
+      <span className="text-sm font-medium text-gray-900">
+        日本語
+      </span>
+      <label className="relative inline-flex items-center cursor-pointer">
+        <input
+          type="checkbox"
+          className="sr-only peer"
+          checked={language === 'en'}
+          onChange={() => setLanguage(language === 'en' ? 'ja' : 'en')}
+        />
+        <div className="w-16 h-8 bg-white border-2 border-gray-200 rounded-full transition-all duration-300">
+          <div
+            className={`absolute top-1 left-1 bg-blue-600 rounded-full h-6 w-6 transform transition-transform duration-300 ${
+              language === 'en' ? 'translate-x-8' : ''
+            }`}
+          ></div>
+        </div>
+      </label>
+      <span className="text-sm font-medium text-gray-900">
+        English
+      </span>
     </div>
   );
 }
