@@ -48,7 +48,7 @@ export const AssistantPanel: React.FC<AssistantPanelProps> = ({
 
   return (
     <Box
-      className="fixed top-16 right-0 h-full shadow-md transition-transform duration-300 ease-in-out rounded-lg border border-gray-200 bg-neutral-50"
+      className="fixed top-16 right-0 h-full shadow-md transition-transform duration-300 ease-in-out rounded-lg border border-[#1a365d] bg-gradient-to-r from-[#1a365d] to-[#2563eb]"
       sx={{
         transform: isOpen ? 'translateX(0)' : 'translateX(100%)',
         width: width,

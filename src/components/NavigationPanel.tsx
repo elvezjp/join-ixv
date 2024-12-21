@@ -68,8 +68,9 @@ export const NavigationPanel: React.FC<NavigationPanelProps> = ({
   return (
     <Box
       className={`fixed top-16 left-0 h-full transition-all duration-300 ease-in-out flex ${
-        isPanelOpen ? 'shadow-md rounded-lg bg-neutral-50 opacity-95 border border-gray-200' : ''
-      }`}
+        isPanelOpen ? 'shadow-md rounded-lg bg-neutral-50 opacity-95 border border-[#1a365d] bg-gradient-to-r from-[#1a365d] to-[#2563eb]' : ''
+      }
+      `}
       sx={{
         transform: isPanelOpen ? 'translateX(0)' : `translateX(calc(-100% + 3em))`,
         width: width,
