@@ -1,8 +1,8 @@
 /**
- * @file src/app/components/NavigationPanel.tsx
- * @lastModifiedBy 冨永善視
- * @modified 2024年12月06日
- * @version 0.1.1
+ * @file src/components/NavigationPanel.tsx
+ * @lastModifiedBy 竹内康太
+ * @modified 2024年12月21日
+ * @version 0.1.0
  * @description ナビゲーションパネルコンポーネント。
  * @copyright © 2024 株式会社エルブズ. All rights reserved.
  */

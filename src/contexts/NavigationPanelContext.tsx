@@ -1,8 +1,8 @@
 /**
- * @file src/app/contexts/NavigationPanelContext.tsx
- * @lastModifiedBy 冨永善視
- * @modified 2024年12月06日
- * @version 0.1.1
+ * @file src/contexts/NavigationPanelContext.tsx
+ * @lastModifiedBy 竹内康太
+ * @modified 2024年12月21日
+ * @version 0.1.0
  * @description ナビゲーションパネルの状態を管理するContextコンポーネント。
  * パネルの表示/非表示、コンテンツ、ピン留め状態、幅などを制御する。
  * @copyright © 2024 株式会社エルブズ. All rights reserved.
