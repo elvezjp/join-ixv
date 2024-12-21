@@ -23,6 +23,11 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import ja from '@/locales/ja';
 import en from '@/locales/en';
 
+/**
+ * ナビゲーションパネルのコンテンツを表示するコンポーネント。
+ * 言語に応じたタイトル、説明、機能リスト、クイックアクセス情報を表示します。
+ * @returns {JSX.Element} ナビゲーションパネルのコンテンツ
+ */
 function NavigationPanelContent() {
   const { language } = useLanguage();
   const t = language === 'ja' ? ja : en;
@@ -41,6 +46,11 @@ function NavigationPanelContent() {
   );
 }
 
+/**
+ * アシスタントパネルのコンテンツを表示するコンポーネント。
+ * 言語に応じたタイトル、説明、機能リスト、クイックアクセス情報を表示します。
+ * @returns {JSX.Element} アシスタントパネルのコンテンツ
+ */
 function AssistantPanelContent() {
   const { language } = useLanguage();
   const t = language === 'ja' ? ja : en;
@@ -59,19 +69,16 @@ function AssistantPanelContent() {
   );
 }
 
+/**
+ * ホームコンポーネント。
+ * ナビゲーションパネルとアシスタントパネルを表示し、ヒーローセクション、機能リスト、サインアップフォームを含むページの主要なコンテンツをレンダリングします。
+ * @returns {JSX.Element} ホームページのJSX要素
+ */
 export default function Home() {
 
   const {isPinned: isNavigationPinned, width: navigationPanelWidth } = useNavigationPanel();
 
-  // useEffect(() => {
-  //   setNavigationDefaultContent(<NavigationPanelContent />);
-  // }, [setNavigationDefaultContent]);
-
   const { isOpen: isAssistantPanelOpen, closePanel: closeAssistantPanel, width: assistantPanelWidth } = useAssistantPanel();
-
-  // useEffect(() => {
-  //   setAssistantDefaultContent(<AssistantPanelContent />);
-  // }, [setAssistantDefaultContent
 
   return (
     <div>

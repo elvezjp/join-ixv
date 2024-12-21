@@ -13,6 +13,9 @@ import { PanelRightOpen } from 'lucide-react';
 import { useAssistantPanel } from '@/contexts/AssistantPanelContext';
 import { styled } from '@mui/material/styles';
 
+/**
+ * カスタムアイコンボタンのスタイルを定義します。
+ */
 const CustomIconButton = styled(IconButton)({
   backgroundColor: 'white',
   '&:hover': {
@@ -21,6 +24,10 @@ const CustomIconButton = styled(IconButton)({
   boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
 });
 
+/**
+ * アシスタントパネルを開くボタンコンポーネント。
+ * @returns {JSX.Element} アシスタントパネルを開くためのボタン。
+ */
 export const AssistantPanelButton = () => {
   const { openPanel: openAssistantPanel } = useAssistantPanel();
 

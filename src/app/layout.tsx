@@ -25,6 +25,12 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://elvezjp.github.io/join-ixv'),
 };
 
+/**
+ * ルートレイアウトコンポーネント。
+ * @param {Object} props - コンポーネントのプロパティ。
+ * @param {React.ReactNode} props.children - レイアウト内に表示される子要素。
+ * @returns {JSX.Element} ルートレイアウトのJSX要素。
+ */
 export default function RootLayout({
   children,
 }: {

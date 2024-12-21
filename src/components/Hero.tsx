@@ -15,6 +15,11 @@ import ja from '@/locales/ja';
 import en from '@/locales/en';
 import { useState, useEffect } from 'react';
 
+/**
+ * ヒーローコンポーネント
+ * @description このコンポーネントは、ヒーローセクションを表示します。スライドショーとアシスタントパネルボタンを含み、ユーザーに重要な情報を提供します。
+ * @returns {JSX.Element} ヒーローセクションのJSX要素
+ */
 const Hero = () => {
   const [isClient, setIsClient] = useState(false);
   const { language } = useLanguage();
