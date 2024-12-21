@@ -93,10 +93,13 @@ export const NavigationPanel: React.FC<NavigationPanelProps> = ({
         <Box className="flex justify-end p-2">
           {isPanelOpen && (
             <IconButton onClick={handleClick} size="small" className={isPinned ? 'bg-blue-100' : ''}>
-              <KeyboardTab sx={{
-                transform: isPinned ? 'rotate(180deg)' : 'none',
-                transition: 'transform 0.3s'
-              }} />
+              <KeyboardTab
+                sx={{
+                  color: "white",
+                  transform: isPinned ? 'rotate(180deg)' : 'none',
+                  transition: 'transform 0.3s'
+                }}
+              />
             </IconButton>
           )}
         </Box>

@@ -57,7 +57,7 @@ export const AssistantPanel: React.FC<AssistantPanelProps> = ({
     >
       <Box className="flex justify-start p-2">
         <IconButton onClick={onClose} size="small">
-          <CloseIcon />
+          <CloseIcon color="white"/>
         </IconButton>
       </Box>
       <Box className="p-4">
