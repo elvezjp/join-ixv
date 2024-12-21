@@ -1,7 +1,7 @@
 /**
  * @file src/components/LanguageSwitcher.tsx
- * @lastModifiedBy 冨永善視
- * @modified 2024年12月18日
+ * @lastModifiedBy 竹内康太
+ * @modified 2024年12月21日
  * @version 0.0.3
  * @description 言語切り替えコンポーネント。
  * @copyright © 2024 株式会社エルブズ. All rights reserved.
@@ -14,7 +14,7 @@ export default function LanguageSwitcher() {
   return (
     <div className="flex items-center gap-3">
       <span className="text-sm font-medium">
-        日本語
+        JP
       </span>
       <label className="relative inline-flex items-center cursor-pointer">
         <input
@@ -32,7 +32,7 @@ export default function LanguageSwitcher() {
         </div>
       </label>
       <span className="text-sm font-medium">
-        English
+        EN
       </span>
     </div>
   );
