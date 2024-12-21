@@ -1,7 +1,7 @@
 /**
  * @file src/components/Header.tsx
- * @lastModifiedBy 冨永善視
- * @modified 2024年12月18日
+ * @lastModifiedBy 竹内康太
+ * @modified 2024年12月21日
  * @version 0.0.3
  * @description ヘッダーのコンポーネント。
  * @copyright © 2024 株式会社エルブズ. All rights reserved.
@@ -53,64 +53,65 @@ export default function Header() {
 
   return (
     <header className="bg-gradient-to-r from-[#1a365d] to-[#2563eb] text-white">
-      <div className="flex justify-end py-6 px-6">
-        <LanguageSwitcher />
-      </div>
       <div className="container mx-auto px-6 py-6">
-        <nav className="flex justify-between items-center mb-16">
-          <div className="text-2xl font-bold">{t.header.logo}</div>
-          <Link
-            href="#signup"
-            className="bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-blue-50 transition"
-            scroll={true}
-          >
-            {t.header.signup}
-          </Link>
+        <nav className="flex justify-between items-center mb-8">
+          <Link href="/" className="text-2xl font-bold mr-auto">{t.header.logo}</Link>
+          <div className="flex items-center space-x-6">
+            <LanguageSwitcher />
+            <Link
+              href="#signup"
+              className="bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-blue-50 transition font-semibold"
+            >
+              {t.header.signup}
+            </Link>
+          </div>
         </nav>
-        <div className="flex flex-col md:flex-row items-center justify-between">
-          <div className="md:w-1/2 mb-8 md:mb-0">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              {t.header.title1}<br />
-              {t.header.title2}
-            </h1>
-            <p className="text-xl mb-8">
-              {t.header.description1}<br />
-              {t.header.description2}
-            </p>
-            <div className="space-x-4">
-              <Link
-                href="#signup"
-                className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition"
-                scroll={true}
-              >
-                {t.header.signup}
-              </Link>
-              <Link
-                href="#features"
-                className="border border-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition"
-                scroll={true}
-              >
-                {t.header.details}
-              </Link>
-            </div>
-            <div className="rounded-lg border border-white p-4 mt-8 md:mr-4">
-              <h2 className="text-xl font-bold mb-4">{t.header.notice.title}</h2>
-              <p className="mb-4">
-                {t.header.notice.message}
+        <div className="flex flex-col md:flex-row items-center justify-center py-20">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="md:w-1/2 mb-8 md:mb-0">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                {t.header.title1}<br />
+                {t.header.title2}
+              </h1>
+              <p className="text-xl mb-8">
+                {t.header.description1}<br />
+                {t.header.description2}
+              </p>
+              <div className="space-x-4">
                 <Link
                   href="#signup"
-                  className="underline"
+                  className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition"
                   scroll={true}
                 >
-                  {t.header.notice.formLink}
+                  {t.header.signup}
                 </Link>
-                {t.header.notice.messageEnd}
-              </p>
+                <Link
+                  href="#features"
+                  className="border border-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition"
+                  scroll={true}
+                >
+                  {t.header.details}
+                </Link>
+              </div>
+              <div className="rounded-lg border border-white p-4 mt-8 md:mr-4">
+                <h2 className="text-xl font-bold mb-4">{t.header.notice.title}</h2>
+                <p className="mb-4">
+                  {t.header.notice.message}
+                  <Link
+                    href="#signup"
+                    className="underline"
+                    scroll={true}
+                  >
+                    {t.header.notice.formLink}
+                  </Link>
+                  {t.header.notice.messageEnd}
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="md:w-1/2">
-            <div className="relative w-full h-[400px]">
-              {isClient && <ImageSlider slides={slides} />}
+            <div className="md:w-1/2">
+              <div className="relative w-full h-[400px]">
+                {isClient && <ImageSlider slides={slides} />}
+              </div>
             </div>
           </div>
         </div>
