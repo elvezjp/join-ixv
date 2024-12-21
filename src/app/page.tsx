@@ -8,6 +8,8 @@
  */
 'use client';
 
+import { Box } from '@mui/material';
+
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
 import SignupForm from '@/components/SignupForm';
@@ -17,22 +19,42 @@ import { useAssistantPanel } from '@/contexts/AssistantPanelContext';
 import { NavigationPanel } from '@/components/NavigationPanel';
 import { AssistantPanel } from '@/components/AssistantPanel';
 
-import { Box } from '@mui/material';
+import { useLanguage } from '@/contexts/LanguageContext';
+import ja from '@/locales/ja';
+import en from '@/locales/en';
 
 function NavigationPanelContent() {
+  const { language } = useLanguage();
+  const t = language === 'ja' ? ja : en;
+
   return (
     <div className="bg-white p-4">
-      <h2 className="text-lg font-semibold">Navigation Panel Content</h2>
-      <p>This is a dummy content for the navigation panel.</p>
+      <h2 className="text-lg font-semibold">{t.navigationPanel.title}</h2>
+      <p>{t.navigationPanel.description}</p>
+      <ul className="list-disc list-inside">
+        {t.navigationPanel.features.map((feature, index) => (
+          <li key={index}>{feature}</li>
+        ))}
+      </ul>
+      <p>{t.navigationPanel.quickAccess}</p>
     </div>
   );
 }
 
-function AssistantPanelDummyContent() {
+function AssistantPanelContent() {
+  const { language } = useLanguage();
+  const t = language === 'ja' ? ja : en;
+
   return (
     <div className="bg-white p-4">
-      <h2 className="text-lg font-semibold">Assistant Panel Content</h2>
-      <p>This is a dummy content for the assistant panel.</p>
+      <h2 className="text-lg font-semibold">{t.assistantPanel.title}</h2>
+      <p>{t.assistantPanel.description}</p>
+      <ul className="list-disc list-inside">
+        {t.assistantPanel.features.map((feature, index) => (
+          <li key={index}>{feature}</li>
+        ))}
+      </ul>
+      <p>{t.assistantPanel.quickAccess}</p>
     </div>
   );
 }
@@ -57,7 +79,7 @@ export default function Home() {
         <NavigationPanelContent />
       </NavigationPanel>
       <AssistantPanel isOpen={isAssistantPanelOpen} onClose={closeAssistantPanel}>
-        <AssistantPanelDummyContent />
+        <AssistantPanelContent />
       </AssistantPanel>
       <div className="bg-gradient-to-r from-[#1a365d] to-[#2563eb] text-white">
         <Box

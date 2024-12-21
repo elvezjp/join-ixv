@@ -218,5 +218,25 @@ export default {
       date: 'Established: December 16, 2024'
     },
     closeButton: 'Close'
-  }
+  },
+  navigationPanel: {
+    title: 'Make Your Development Smarter',
+    description: 'IXV transforms your development experience. Access necessary information and tools with a single click. Smoothly utilize convenient features that support efficient development from this panel.',
+    features: [
+      'Project Management',
+      'Code Analysis',
+      'Team Collaboration',
+    ],
+    quickAccess: 'Quick access to features like these',
+  },
+  assistantPanel: {
+    title: 'AI Assistant Supports Your Development',
+    description: 'Real-time advice on questions and best practices during development. Share insights with team members and implement better code quickly.',
+    features: [
+      'Code Review Assistance',
+      'Answers to Technical Questions',
+      'Suggestions for Best Practices',
+    ],
+    quickAccess: 'Interactive support for features like these',
+  },
 } as const;
