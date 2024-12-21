@@ -45,7 +45,7 @@ export default function Home() {
   //   setNavigationDefaultContent(<NavigationPanelContent />);
   // }, [setNavigationDefaultContent]);
 
-  const { isOpen: isAssistantPanelOpen, content: AssistantPanelContent, openPanel: openAssistantPanel, closePanel: closeAssistantPanel, width: AssistantPanelWidth } = useAssistantPanel();
+  const { isOpen: isAssistantPanelOpen, closePanel: closeAssistantPanel } = useAssistantPanel();
 
   // useEffect(() => {
   //   setAssistantDefaultContent(<AssistantPanelContent />);

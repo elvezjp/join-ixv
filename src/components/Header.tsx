@@ -9,7 +9,6 @@
 
 'use client'
 
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -21,13 +20,8 @@ import en from '@/locales/en';
  * @returns ヘッダーのコンポーネント。
  */
 export default function Header() {
-  const [isClient, setIsClient] = useState(false);
   const { language } = useLanguage();
   const t = language === 'ja' ? ja : en;
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
 
   return (
   <header className="bg-gradient-to-r from-[#1a365d] to-[#2563eb] text-white">
