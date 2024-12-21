@@ -12,12 +12,12 @@ import Hero from '@/components/Hero';
 import Features from '@/components/Features';
 import SignupForm from '@/components/SignupForm';
 
-// import { useNavigationPanel } from '@/contexts/NavigationPanelContext';
-// import { useAssistantPanel } from '@/contexts/AssistantPanelContext';
+import { useNavigationPanel } from '@/contexts/NavigationPanelContext';
+import { useAssistantPanel } from '@/contexts/AssistantPanelContext';
 import { NavigationPanel } from '@/components/NavigationPanel';
 import { AssistantPanel } from '@/components/AssistantPanel';
-import { useAssistantPanel } from '@/contexts/AssistantPanelContext';
 
+import { Box } from '@mui/material';
 
 function NavigationPanelContent() {
   return (
@@ -39,13 +39,13 @@ function AssistantPanelDummyContent() {
 
 export default function Home() {
 
-  // const { setDefaultContent: setNavigationDefaultContent } = useNavigationPanel();
+  const {isPinned: isNavigationPinned, width: navigationPanelWidth } = useNavigationPanel();
 
   // useEffect(() => {
   //   setNavigationDefaultContent(<NavigationPanelContent />);
   // }, [setNavigationDefaultContent]);
 
-  const { isOpen: isAssistantPanelOpen, closePanel: closeAssistantPanel } = useAssistantPanel();
+  const { isOpen: isAssistantPanelOpen, closePanel: closeAssistantPanel, width: assistantPanelWidth } = useAssistantPanel();
 
   // useEffect(() => {
   //   setAssistantDefaultContent(<AssistantPanelContent />);
@@ -59,9 +59,27 @@ export default function Home() {
       <AssistantPanel isOpen={isAssistantPanelOpen} onClose={closeAssistantPanel}>
         <AssistantPanelDummyContent />
       </AssistantPanel>
-      <Hero />
-      <Features />
-      <SignupForm />
+      <div className="bg-gradient-to-r from-[#1a365d] to-[#2563eb] text-white">
+        <Box
+          className="flex-1 transition-all duration-300 ease-in-out"
+          sx={{
+            marginLeft: isNavigationPinned ? navigationPanelWidth : 0,
+            marginRight: isAssistantPanelOpen ? assistantPanelWidth : 0
+          }}
+        >
+          <Hero />
+        </Box>
+      </div>
+      <Box
+        className="flex-1 transition-all duration-300 ease-in-out"
+        sx={{
+          marginLeft: isNavigationPinned ? navigationPanelWidth : 0,
+          marginRight: isAssistantPanelOpen ? assistantPanelWidth : 0
+        }}
+      >
+        <Features />
+        <SignupForm />
+      </Box>
     </div>
   );
 }
