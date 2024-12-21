@@ -31,8 +31,8 @@ export default function Header() {
 
   return (
   <header className="bg-gradient-to-r from-[#1a365d] to-[#2563eb] text-white">
-    <div className="container mx-auto px-6 py-6">
-      <nav className="flex justify-between items-center mb-8">
+    <div className="container mx-auto px-6 pt-6">
+      <nav className="flex justify-between items-center">
         <Link href="/" className="text-2xl font-bold mr-auto">{t.header.logo}</Link>
         <div className="flex items-center space-x-6">
           <LanguageSwitcher />
