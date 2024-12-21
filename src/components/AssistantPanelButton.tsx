@@ -1,6 +1,6 @@
 import React from 'react';
 import { IconButton } from "@mui/material";
-import ArrowForward from '@mui/icons-material/ArrowForward'; // 変更
+import { PanelRightOpen } from 'lucide-react';
 import { useAssistantPanel } from '@/contexts/AssistantPanelContext';
 
 export const AssistantPanelButton = () => {
@@ -11,7 +11,7 @@ export const AssistantPanelButton = () => {
 			onClick={() => openAssistantPanel()}
 			className="bg-white shadow-md hover:bg-blue-600"
 		>
-			<ArrowForward className="w-5 h-5" />
+			<PanelRightOpen className="w-5 h-5" />
 		</IconButton>
 	);
 };
