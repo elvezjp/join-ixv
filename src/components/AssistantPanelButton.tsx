@@ -1,3 +1,12 @@
+/**
+ * @file src/components/AssistantPanelButton.tsx
+ * @lastModifiedBy 竹内康太
+ * @modified 2024年12月21日
+ * @version 0.1.0
+ * @description アシスタントパネルボタンコンポーネント。
+ * @copyright © 2024 株式会社エルブズ. All rights reserved.
+ */
+
 import React from 'react';
 import { IconButton } from "@mui/material";
 import { PanelRightOpen } from 'lucide-react';
