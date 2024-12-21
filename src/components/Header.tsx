@@ -11,7 +11,6 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { AssistantPanelButton } from '@/components/AssistantPanelButton';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ja from '@/locales/ja';
@@ -43,7 +42,6 @@ export default function Header() {
           >
             {t.header.signup}
           </Link>
-          <AssistantPanelButton />
         </div>
       </nav>
     </div>

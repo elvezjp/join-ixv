@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import ImageSlider from './ImageSlider';
+import { AssistantPanelButton } from '@/components/AssistantPanelButton';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ja from '@/locales/ja';
 import en from '@/locales/en';
@@ -38,6 +39,10 @@ const Hero = () => {
   return (
 	<div className="bg-gradient-to-r from-[#1a365d] to-[#2563eb] text-white">
 		<div className="container  mx-auto px-6 py-6">
+
+			<div className="flex justify-end">
+				<AssistantPanelButton />
+			</div>
 			<div className="flex flex-col md:flex-row items-center justify-between">
 				<div className="md:w-1/2 mb-8 md:mb-0">
 					<h1 className="text-4xl md:text-6xl font-bold mb-6">
