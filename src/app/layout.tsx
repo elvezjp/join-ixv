@@ -34,7 +34,9 @@ export default function RootLayout({
         <LanguageProvider>
           <NavigationPanelProvider>
             <AssistantPanelProvider>
+            <main className="flex-1 min-h-screen">
               {children}
+            </main>
             </AssistantPanelProvider>
           </NavigationPanelProvider>
         </LanguageProvider>

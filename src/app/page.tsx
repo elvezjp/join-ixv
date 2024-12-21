@@ -54,20 +54,18 @@ export default function Home() {
   // }, [setAssistantDefaultContent
 
   return (
-    <div className="flex">
-    <NavigationPanel>
-      <NavigationPanelContent />
-    </NavigationPanel>
-    <AssistantPanel isOpen={isAssistantPanelOpen} onClose={closeAssistantPanel}>
-      <AssistantPanelDummyContent />
-    </AssistantPanel>
-    <main className="flex-1 min-h-screen">
+    <div>
+      <NavigationPanel>
+        <NavigationPanelContent />
+      </NavigationPanel>
+      <AssistantPanel isOpen={isAssistantPanelOpen} onClose={closeAssistantPanel}>
+        <AssistantPanelDummyContent />
+      </AssistantPanel>
       <Header />
       <Hero />
       <Features />
       <SignupForm />
       <Footer />
-    </main>
-  </div>
+    </div>
   );
 }
