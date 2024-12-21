@@ -13,6 +13,7 @@ import '../styles/modal.css';
 import '../styles/slider.css';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import { NavigationPanelProvider } from '@/contexts/NavigationPanelContext';
+import { AssistantPanelProvider } from '@/contexts/AssistantPanelContext';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -32,7 +33,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <LanguageProvider>
           <NavigationPanelProvider>
-            {children}
+            <AssistantPanelProvider>
+              {children}
+            </AssistantPanelProvider>
           </NavigationPanelProvider>
         </LanguageProvider>
       </body>
