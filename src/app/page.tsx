@@ -9,6 +9,7 @@
 'use client';
 
 import Header from '@/components/Header';
+import Hero from '@/components/Hero';
 import Features from '@/components/Features';
 import SignupForm from '@/components/SignupForm';
 import Footer from '@/components/Footer';
@@ -61,15 +62,8 @@ export default function Home() {
       <AssistantPanelDummyContent />
     </AssistantPanel>
     <main className="flex-1 min-h-screen">
-      <div className="flex justify-end">
-        <button
-          onClick={() => openAssistantPanel()}
-          className="p-2 bg-blue-500 text-white rounded"
-        >
-          アシスタントパネルを開く
-        </button>
-      </div>
       <Header />
+      <Hero />
       <Features />
       <SignupForm />
       <Footer />
