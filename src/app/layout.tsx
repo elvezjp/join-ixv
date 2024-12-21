@@ -11,6 +11,8 @@ import { Inter } from 'next/font/google';
 import '../styles/globals.css';
 import '../styles/modal.css';
 import '../styles/slider.css';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import { NavigationPanelProvider } from '@/contexts/NavigationPanelContext';
 import { AssistantPanelProvider } from '@/contexts/AssistantPanelContext';
@@ -34,9 +36,11 @@ export default function RootLayout({
         <LanguageProvider>
           <NavigationPanelProvider>
             <AssistantPanelProvider>
+            <Header />
             <main className="flex-1 min-h-screen">
               {children}
             </main>
+            <Footer />
             </AssistantPanelProvider>
           </NavigationPanelProvider>
         </LanguageProvider>

@@ -8,11 +8,9 @@
  */
 'use client';
 
-import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
 import SignupForm from '@/components/SignupForm';
-import Footer from '@/components/Footer';
 
 // import { useNavigationPanel } from '@/contexts/NavigationPanelContext';
 // import { useAssistantPanel } from '@/contexts/AssistantPanelContext';
@@ -61,11 +59,9 @@ export default function Home() {
       <AssistantPanel isOpen={isAssistantPanelOpen} onClose={closeAssistantPanel}>
         <AssistantPanelDummyContent />
       </AssistantPanel>
-      <Header />
       <Hero />
       <Features />
       <SignupForm />
-      <Footer />
     </div>
   );
 }
