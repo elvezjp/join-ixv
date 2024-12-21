@@ -28,7 +28,7 @@ function NavigationPanelContent() {
   const t = language === 'ja' ? ja : en;
 
   return (
-    <div className="bg-white p-4">
+    <div className="text-white">
       <h2 className="text-lg font-semibold">{t.navigationPanel.title}</h2>
       <p>{t.navigationPanel.description}</p>
       <ul className="list-disc list-inside">
