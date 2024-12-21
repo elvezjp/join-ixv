@@ -12,6 +12,8 @@ import '../styles/globals.css';
 import '../styles/modal.css';
 import '../styles/slider.css';
 import { LanguageProvider } from '@/contexts/LanguageContext';
+import { NavigationPanelProvider } from '@/contexts/NavigationPanelContext';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -29,7 +31,9 @@ export default function RootLayout({
     <html lang="ja">
       <body className={inter.className}>
         <LanguageProvider>
-          {children}
+          <NavigationPanelProvider>
+            {children}
+          </NavigationPanelProvider>
         </LanguageProvider>
       </body>
     </html>
