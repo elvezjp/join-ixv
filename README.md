@@ -1,3 +1,5 @@
+# Github　Pagesは以下を参照してください。
+https://elvezjp.github.io/join-ixv/
 # Next.js フロントエンド コーディングルール
 
 ## ディレクトリ構成
