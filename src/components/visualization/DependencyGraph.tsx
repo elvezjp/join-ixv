@@ -6,7 +6,6 @@ import { DependencyNode } from '@/lib/analyzer/astAnalyzer';
 import { NodeObject } from '3d-force-graph';
 import SpriteText from 'three-spritetext';
 import * as THREE from 'three';
-import * as d3 from 'd3';
 
 interface Props {
   data: DependencyNode[];
