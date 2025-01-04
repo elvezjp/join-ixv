@@ -9,15 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@babel/traverse": "^7.26.4",
+    "@babel/types": "^7.26.3",
     "@emailjs/browser": "^4.4.1",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^6.2.1",
     "@mui/material": "^6.2.1",
+    "@react-three/drei": "^9.120.5",
+    "@types/babel__traverse": "^7.20.6",
+    "@types/three": "^0.171.0",
+    "@typescript-eslint/parser": "^8.19.0",
+    "@typescript-eslint/types": "^8.19.0",
     "lucide-react": "^0.469.0",
     "next": "15.1.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "three": "^0.172.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
