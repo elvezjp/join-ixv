@@ -5,7 +5,7 @@ import { useNavigationPanel } from '@/contexts/NavigationPanelContext';
 import { useAssistantPanel } from '@/contexts/AssistantPanelContext';
 import { NavigationPanel } from '@/components/NavigationPanel';
 import { AssistantPanel } from '@/components/AssistantPanel';
-import DependencyGraph from '@/components/visualization/DependencyGraph2';
+import DependencyGraph from '@/components/visualization/DependencyGraph';
 
 import { NavigationPanelContent, AssistantPanelContent } from './PanelContent';
 import { DependencyNode } from '@/lib/analyzer/astAnalyzer';
