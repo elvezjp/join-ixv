@@ -67,10 +67,8 @@ const FileTree = ({ files }: FileTreeProps) => {
       sx={{
         height: '100%',
         overflowY: 'auto',
-        width: '250px',
-        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        width: '300px',
         padding: 2,
-        borderRight: 1,
         borderColor: 'divider',
         color: 'black',
         '& .MuiTreeItem-label': {

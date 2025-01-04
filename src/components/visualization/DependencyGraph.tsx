@@ -120,57 +120,56 @@ export default function DependencyGraph({ data, files }: Props) {
 
   return (
     <Box sx={{
-      display: 'flex',
       width: '100%',
       height: '100%',
       position: 'relative'
     }}>
-      <FileTree files={files} />
-      <Box sx={{
-        flexGrow: 1,
-        position: 'relative',
-        height: '100%'
-      }}>
-        <div className="absolute inset-0">
-          <div ref={containerRef} className="w-full h-full" />
-          <div className="absolute text-black right-4 top-4 bg-white/90 p-2 rounded-lg shadow-lg z-10 backdrop-blur-sm border border-gray-200">
-            {legendItems.map((item, index) => (
-              <div key={index} className="flex items-center gap-1 text-sm">
-                <div
-                  className="w-4 h-4 rounded-full"
-                  style={{ backgroundColor: item.color }}
-                />
-                <span>{item.type}</span>
-              </div>
-            ))}
-          </div>
-          {hoveredNode && (
-            <div
-              className="absolute text-black bg-white/90 p-4 rounded-lg shadow-lg z-10 backdrop-blur-sm border border-gray-200"
-              style={{
-                left: 10,
-                top: 10,
-              }}
-            >
-              <h3 className="font-bold text-lg">{hoveredNode.name}</h3>
-              <p className="text-sm text-gray-600">Type: {hoveredNode.type}</p>
-              <p className="text-sm text-gray-600">
-                Dependencies: {hoveredNode.dependencies ? hoveredNode.dependencies.length : 0}
-              </p>
-              {hoveredNode.dependencies && hoveredNode.dependencies.length > 0 && (
-                <div className="mt-2 text-sm text-gray-500">
-                  <p>Depends on:</p>
-                  <ul className="list-disc list-inside">
-                    {hoveredNode.dependencies.map(dep => (
-                      <li key={dep}>{dep}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          )}
+      <div className="absolute inset-0">
+        <div ref={containerRef} className="w-full h-full" />
+
+        <div className="absolute left-10 top-10 bg-white/90 p-2 rounded-lg shadow-lg z-10 backdrop-blur-sm border border-gray-200">
+          <FileTree files={files} />
         </div>
-      </Box>
+
+        <div className="absolute text-black right-10 top-10 bg-white/90 p-2 rounded-lg shadow-lg z-10 backdrop-blur-sm border border-gray-200">
+          {legendItems.map((item, index) => (
+            <div key={index} className="flex items-center gap-1 text-sm">
+              <div
+                className="w-4 h-4 rounded-full"
+                style={{ backgroundColor: item.color }}
+              />
+              <span>{item.type}</span>
+            </div>
+          ))}
+        </div>
+
+        {hoveredNode && (
+          <div
+            className="absolute text-black bg-white/90 p-4 rounded-lg shadow-lg z-10 backdrop-blur-sm border border-gray-200"
+            style={{
+              left: '50%',
+              bottom: 20,
+              transform: 'translateX(-50%)'
+            }}
+          >
+            <h3 className="font-bold text-lg">{hoveredNode.name}</h3>
+            <p className="text-sm text-gray-600">Type: {hoveredNode.type}</p>
+            <p className="text-sm text-gray-600">
+              Dependencies: {hoveredNode.dependencies ? hoveredNode.dependencies.length : 0}
+            </p>
+            {hoveredNode.dependencies && hoveredNode.dependencies.length > 0 && (
+              <div className="mt-2 text-sm text-gray-500">
+                <p>Depends on:</p>
+                <ul className="list-disc list-inside">
+                  {hoveredNode.dependencies.map(dep => (
+                    <li key={dep}>{dep}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
     </Box>
   );
 }
