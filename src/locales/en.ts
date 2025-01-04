@@ -228,13 +228,17 @@ export default {
       'Team Collaboration',
     ],
     quickAccess: 'Quick access to features like these',
-    pageAnalysis: {
-      title: 'Page Analysis',
-      viewGraph: 'View Dependency Graph'
+    homeLink: {
+      title: 'Home',
+      linkText: 'Go back to Home'
     },
-    pageAnalysis2: {
+    pageAnalysisLink: {
+      title: 'Page Analysis',
+      linkText: 'View Dependency Graph'
+    },
+    pageAnalysis2Link: {
       title: 'Page Analysis with 3D Force-Directed Graph',
-      viewGraph: 'View Dependency Graph'
+      linkText: 'View Dependency Graph'
     }
   },
   assistantPanel: {

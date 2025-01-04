@@ -228,14 +228,18 @@ export default {
       'チーム連携',
     ],
     quickAccess: 'などの機能にすばやくアクセス',
-    pageAnalysis: {
+    pageAnalysisLink: {
       title: 'ページ解析',
-      viewGraph: '依存関係グラフを表示'
+      linkText: '依存関係グラフを表示'
     },
-    pageAnalysis2: {
+    pageAnalysis2Link: {
       title: 'ページ解析（3D Force-Directed Graph）',
-      viewGraph: '依存関係グラフを表示'
-    }
+      linkText: '依存関係グラフを表示'
+    },
+    homeLink: {
+      title: 'ホーム',
+      linkText: 'ホームへ戻る'
+    },
   },
   assistantPanel: {
     title: 'AIアシスタントがあなたの開発をサポート',

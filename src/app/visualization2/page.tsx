@@ -1,14 +1,23 @@
+// app/visualization/page.tsx
 import { analyze } from '@/lib/analyzer/astAnalyzer';
-import DependencyGraph from '@/components/visualization/DependencyGraph2';
 import { resolve } from 'path';
+import VisualizationClient from './VisualizationClient';
+
+export async function generateStaticParams() {
+  // ビルド時に実行される
+  const componentsPath = resolve(process.cwd(), 'src');
+  const dependencies = await analyze(componentsPath);
+
+  return {
+    props: {
+      dependencies
+    }
+  };
+}
 
 export default async function VisualizationPage() {
   const componentsPath = resolve(process.cwd(), 'src');
   const dependencies = await analyze(componentsPath);
 
-  return (
-    <main className="w-screen h-screen">
-      <DependencyGraph data={dependencies} />
-    </main>
-  );
+  return <VisualizationClient initialData={dependencies} />;
 }
