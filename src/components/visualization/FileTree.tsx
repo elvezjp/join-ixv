@@ -1,3 +1,13 @@
+/**
+ * @file src/components/visualization/FileTree.tsx
+ * @lastModifiedBy 竹内康太
+ * @modified 2025年01月04日
+ * @version 0.1.0
+ * @description プロジェクトのファイル構造をツリー表示するコンポーネント。
+ * MUIのTreeViewを使用して階層構造を表現する。
+ * @copyright © 2024 株式会社エルブズ. All rights reserved.
+ */
+
 import { TreeView, TreeItem } from '@mui/x-tree-view';
 import { ExpandMore, ChevronRight } from '@mui/icons-material';
 import { FileNode } from '@/lib/analyzer/types';

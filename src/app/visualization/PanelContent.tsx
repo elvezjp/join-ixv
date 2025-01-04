@@ -1,3 +1,13 @@
+/**
+ * @file src/app/visualization/PanelContent.tsx
+ * @lastModifiedBy 竹内康太
+ * @modified 2025年01月04日
+ * @version 0.1.0
+ * @description ナビゲーションパネルとアシスタントパネルのコンテンツを提供するコンポーネント。
+ * 多言語対応と各パネルの機能説明を含む。
+ * @copyright © 2024 株式会社エルブズ. All rights reserved.
+ */
+
 'use client'
 
 import { useLanguage } from '@/contexts/LanguageContext';

@@ -1,3 +1,13 @@
+/**
+ * @file src/lib/analyzer/astAnalyzer.ts
+ * @lastModifiedBy 竹内康太
+ * @modified 2025年01月04日
+ * @version 0.1.0
+ * @description TypeScriptのASTを解析して依存関係を抽出するユーティリティ。
+ * コンポーネント、関数、コンテキストなどの種類を判別し、依存関係を特定する。
+ * @copyright © 2024 株式会社エルブズ. All rights reserved.
+ */
+
 import { parse } from '@typescript-eslint/parser';
 import { readFileSync, readdirSync } from 'fs';
 import { resolve, relative, dirname } from 'path';

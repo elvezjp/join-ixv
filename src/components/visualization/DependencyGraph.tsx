@@ -1,3 +1,13 @@
+/**
+ * @file src/components/visualization/DependencyGraph.tsx
+ * @lastModifiedBy 竹内康太
+ * @modified 2025年01月04日
+ * @version 0.1.0
+ * @description 3D Force Graphを使用して依存関係を可視化するコンポーネント。
+ * ノードの種類別の色分け、ホバー時の情報表示、ファイルツリーの表示機能を提供する。
+ * @copyright © 2024 株式会社エルブズ. All rights reserved.
+ */
+
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';

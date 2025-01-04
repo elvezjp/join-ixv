@@ -1,3 +1,13 @@
+/**
+ * @file src/types/3d-force-graph.d.ts
+ * @lastModifiedBy 竹内康太
+ * @modified 2025年01月04日
+ * @version 0.1.0
+ * @description 3d-force-graphライブラリの型定義ファイル。
+ * グラフのノード、リンク、およびグラフインスタンスの型を定義する。
+ * @copyright © 2024 株式会社エルブズ. All rights reserved.
+ */
+
 declare module '3d-force-graph' {
   interface NodeObject {
     id: string;

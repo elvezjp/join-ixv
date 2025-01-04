@@ -1,3 +1,13 @@
+/**
+ * @file src/app/visualization/VisualizationClient.tsx
+ * @lastModifiedBy 竹内康太
+ * @modified 2025年01月04日
+ * @version 0.1.0
+ * @description 依存関係の可視化を行うクライアントサイドコンポーネント。
+ * ナビゲーションパネル、アシスタントパネル、依存関係グラフを統合する。
+ * @copyright © 2024 株式会社エルブズ. All rights reserved.
+ */
+
 'use client'
 
 import { Box } from '@mui/material';
