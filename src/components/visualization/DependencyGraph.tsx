@@ -6,6 +6,7 @@ import { DependencyNode } from '@/lib/analyzer/astAnalyzer';
 import { NodeObject } from '3d-force-graph';
 import SpriteText from 'three-spritetext';
 import * as THREE from 'three';
+import * as d3 from 'd3';
 
 interface Props {
   data: DependencyNode[];
@@ -25,9 +26,15 @@ interface GraphNode extends NodeObject {
   color?: string;
 }
 
+interface LegendItem {
+  type: string;
+  color: string;
+}
+
 export default function DependencyGraph({ data }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [hoveredNode, setHoveredNode] = useState<NodeInfo | null>(null);
+  const [legendItems, setLegendItems] = useState<LegendItem[]>([]);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -47,10 +54,26 @@ export default function DependencyGraph({ data }: Props) {
       )
     };
 
+    const uniqueTypes = ['component', 'function', 'context', 'other'];
+    const colorScale = (type: string) => {
+      const colorMap: { [key: string]: string } = {
+        component: '#FF9F1C', // オレンジ
+        function: '#4361EE', // 青
+        context: '#4CAF50',  // 緑
+        other: '#9C27B0'     // 紫
+      };
+      return colorMap[type] || '#808080'; // デフォルトはグレー
+    };
+
+    const newLegendItems = uniqueTypes.map(type => ({
+      type,
+      color: colorScale(type)
+    }));
+    setLegendItems(newLegendItems);
+
     const Graph = ForceGraph3D()(containerRef.current as HTMLElement)
       .graphData(graphData)
       .nodeLabel('name')
-      .nodeAutoColorBy('type')
       .linkColor('#ffffff')
       .linkWidth(2)
       .linkOpacity(0.5)
@@ -58,9 +81,10 @@ export default function DependencyGraph({ data }: Props) {
       .linkDirectionalArrowRelPos(1)
       .nodeThreeObject((node: GraphNode) => {
         const group = new THREE.Group();
+        const color = colorScale(node.type);
 
         const sphereGeometry = new THREE.SphereGeometry(3);
-        const sphereMaterial = new THREE.MeshBasicMaterial({ color: node.color || 'gray' });
+        const sphereMaterial = new THREE.MeshBasicMaterial({ color });
         const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
         group.add(sphere);
 
@@ -94,6 +118,17 @@ export default function DependencyGraph({ data }: Props) {
   return (
     <div className="relative w-full h-full">
       <div ref={containerRef} className="w-full h-full" />
+      <div className="absolute text-black right-4 top-4 bg-white/90 p-2 rounded-lg shadow-lg z-10 backdrop-blur-sm border border-gray-200">
+        {legendItems.map((item, index) => (
+          <div key={index} className="flex items-center gap-1 text-sm">
+            <div
+              className="w-4 h-4 rounded-full"
+              style={{ backgroundColor: item.color }}
+            />
+            <span>{item.type}</span>
+          </div>
+        ))}
+      </div>
       {hoveredNode && (
         <div
           className="absolute text-black bg-white/90 p-4 rounded-lg shadow-lg z-10 backdrop-blur-sm border border-gray-200"
