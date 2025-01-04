@@ -17,6 +17,14 @@ interface NodeInfo {
   dependencies: string[];
 }
 
+interface GraphNode extends NodeObject {
+  id: string;
+  name: string;
+  type: string;
+  val: number;
+  color?: string;
+}
+
 export default function DependencyGraph({ data }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [hoveredNode, setHoveredNode] = useState<NodeInfo | null>(null);
@@ -43,20 +51,26 @@ export default function DependencyGraph({ data }: Props) {
       .graphData(graphData)
       .nodeLabel('name')
       .nodeAutoColorBy('type')
-      .nodeThreeObject(node => {
+      .linkColor('#ffffff')
+      .linkWidth(2)
+      .linkOpacity(0.5)
+      .linkDirectionalArrowLength(5)
+      .linkDirectionalArrowRelPos(1)
+      .linkDirectionalParticles(2)
+      .linkDirectionalParticleWidth(2)
+      .linkDirectionalParticleSpeed(0.005)
+      .nodeThreeObject((node: GraphNode) => {
         const group = new THREE.Group();
 
-        // 球を作成
-        const sphereGeometry = new THREE.SphereGeometry(5);
+        const sphereGeometry = new THREE.SphereGeometry(3);
         const sphereMaterial = new THREE.MeshBasicMaterial({ color: node.color || 'gray' });
         const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
         group.add(sphere);
 
-        // ラベルを作成
         const sprite = new SpriteText(`${node.name} [${node.type}]`);
         sprite.color = 'white';
         sprite.textHeight = 8;
-        sprite.position.set(0, 10, 0); // 球の上にラベルを配置
+        sprite.position.set(0, 10, 0);
         group.add(sprite);
 
         return group;

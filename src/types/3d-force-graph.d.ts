@@ -24,6 +24,14 @@ declare module '3d-force-graph' {
     onNodeHover(callback: (node: NodeObject | null) => void): GraphInstance;
     nodeThreeObject(callback: (node: NodeObject) => THREE.Object3D): GraphInstance;
     _destructor(): void;
+    linkColor(color: string): GraphInstance;
+    linkWidth(width: number): GraphInstance;
+    linkOpacity(opacity: number): GraphInstance;
+    linkDirectionalArrowLength(length: number): GraphInstance;
+    linkDirectionalArrowRelPos(pos: number): GraphInstance;
+    linkDirectionalParticles(num: number): GraphInstance;
+    linkDirectionalParticleWidth(width: number): GraphInstance;
+    linkDirectionalParticleSpeed(speed: number): GraphInstance;
   }
 
   export default function ForceGraph3D(): (element: HTMLElement) => GraphInstance;
