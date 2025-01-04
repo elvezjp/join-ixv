@@ -203,7 +203,7 @@ export default function DependencyGraph({ data, files }: Props) {
               left: '50%',
               bottom: 100,
               transform: 'translateX(-50%)',
-              maxWidth: '750px'
+              maxWidth: '850px'
             }}
           >
             <h3 className="font-bold text-lg">{hoveredNode.name}</h3>
