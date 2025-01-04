@@ -17,7 +17,6 @@ import Link from 'next/link';
 
 /**
  * ナビゲーションパネルのコンテンツを表示するコンポーネント。
- * 言語に応じたタイトル、説明、機能リスト、クイックアクセス情報を表示します。
  * @returns {JSX.Element} ナビゲーションパネルのコンテンツ
  */
 export function NavigationPanelContent() {
@@ -55,7 +54,6 @@ export function NavigationPanelContent() {
 
 /**
  * アシスタントパネルのコンテンツを表示するコンポーネント。
- * 言語に応じたタイトル、説明、機能リスト、クイックアクセス情報を表示します。
  * @returns {JSX.Element} アシスタントパネルのコンテンツ
  */
 export function AssistantPanelContent() {
