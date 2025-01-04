@@ -48,10 +48,22 @@ function NavigationPanelContent() {
           {t.navigationPanel.pageAnalysis.title}
         </h3>
         <a
-          href="/join-ixv/visualization"
+          href={window.location.pathname.includes('join-ixv') ? '/join-ixv/visualization' : '/visualization'}
           className="text-blue-300 hover:text-blue-100 transition-colors duration-200"
         >
           {t.navigationPanel.pageAnalysis.viewGraph}
+        </a>
+      </div>
+
+      <div className="mt-4 border-t border-gray-600 pt-4">
+        <h3 className="text-md font-semibold mb-2">
+          {t.navigationPanel.pageAnalysis2.title}
+        </h3>
+        <a
+          href={window.location.pathname.includes('join-ixv') ? '/join-ixv/visualization2' : '/visualization2'}
+          className="text-blue-300 hover:text-blue-100 transition-colors duration-200"
+        >
+          {t.navigationPanel.pageAnalysis2.viewGraph}
         </a>
       </div>
     </div>

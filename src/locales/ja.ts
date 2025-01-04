@@ -231,6 +231,10 @@ export default {
     pageAnalysis: {
       title: 'ページ解析',
       viewGraph: '依存関係グラフを表示'
+    },
+    pageAnalysis2: {
+      title: 'ページ解析（3D Force-Directed Graph）',
+      viewGraph: '依存関係グラフを表示'
     }
   },
   assistantPanel: {

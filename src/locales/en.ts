@@ -231,6 +231,10 @@ export default {
     pageAnalysis: {
       title: 'Page Analysis',
       viewGraph: 'View Dependency Graph'
+    },
+    pageAnalysis2: {
+      title: 'Page Analysis with 3D Force-Directed Graph',
+      viewGraph: 'View Dependency Graph'
     }
   },
   assistantPanel: {
