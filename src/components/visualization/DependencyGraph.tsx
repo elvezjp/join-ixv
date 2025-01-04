@@ -37,6 +37,7 @@ interface NodeInfo {
   name: string;
   type: string;
   dependencies: string[];
+  dependedBy: string[];
 }
 
 /**
@@ -67,6 +68,26 @@ export default function DependencyGraph({ data, files }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [hoveredNode, setHoveredNode] = useState<NodeInfo | null>(null);
   const [legendItems, setLegendItems] = useState<LegendItem[]>([]);
+
+  const calculateReverseDependencies = (nodes: DependencyNode[]) => {
+    const reverseDeps = new Map<string, string[]>();
+
+    // 初期化
+    nodes.forEach(node => {
+      reverseDeps.set(node.id, []);
+    });
+
+    // 逆依存関係の計算
+    nodes.forEach(node => {
+      node.dependencies.forEach(depId => {
+        const deps = reverseDeps.get(depId) || [];
+        deps.push(node.id);
+        reverseDeps.set(depId, deps);
+      });
+    });
+
+    return reverseDeps;
+  };
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -130,10 +151,13 @@ export default function DependencyGraph({ data, files }: Props) {
       })
       .onNodeHover((node: NodeObject | null) => {
         if (node) {
+          const reverseDeps = calculateReverseDependencies(data);
+          const currentNode = data.find(n => n.id === node.id);
           const nodeInfo: NodeInfo = {
-            name: node.name,
-            type: node.type,
-            dependencies: data.find(n => n.id === node.id)?.dependencies || []
+            name: node.name as string,
+            type: node.type as string,
+            dependencies: currentNode?.dependencies || [],
+            dependedBy: reverseDeps.get(node.id as string) || []
           };
           setHoveredNode(nodeInfo);
         } else {
@@ -178,24 +202,44 @@ export default function DependencyGraph({ data, files }: Props) {
             style={{
               left: '50%',
               bottom: 100,
-              transform: 'translateX(-50%)'
+              transform: 'translateX(-50%)',
+              maxWidth: '750px'
             }}
           >
             <h3 className="font-bold text-lg">{hoveredNode.name}</h3>
             <p className="text-sm text-gray-600">Type: {hoveredNode.type}</p>
-            <p className="text-sm text-gray-600">
-              Dependencies: {hoveredNode.dependencies ? hoveredNode.dependencies.length : 0}
-            </p>
-            {hoveredNode.dependencies && hoveredNode.dependencies.length > 0 && (
-              <div className="mt-2 text-sm text-gray-500">
-                <p>Depends on:</p>
-                <ul className="list-disc list-inside">
-                  {hoveredNode.dependencies.map(dep => (
-                    <li key={dep}>{dep}</li>
-                  ))}
-                </ul>
+
+            <div className="grid grid-cols-2 gap-4 mt-2">
+              <div className="text-sm text-gray-500">
+                <p className="font-semibold">
+                  Depends on:
+                </p>
+                {hoveredNode.dependencies?.length > 0 ? (
+                  <ul className="list-disc list-inside">
+                    {hoveredNode.dependencies.map(dep => (
+                      <li key={dep}>{dep}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-xs italic">-</p>
+                )}
               </div>
-            )}
+
+              <div className="text-sm text-gray-500">
+                <p className="font-semibold">
+                  Depended by:
+                </p>
+                {hoveredNode.dependedBy?.length > 0 ? (
+                  <ul className="list-disc list-inside">
+                    {hoveredNode.dependedBy.map(dep => (
+                      <li key={dep}>{dep}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-xs italic">-</p>
+                )}
+              </div>
+            </div>
           </div>
         )}
       </div>
