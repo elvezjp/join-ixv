@@ -20,17 +20,29 @@ import FileTree from './FileTree';
 import { Box } from '@mui/material';
 import { FileNode } from '@/lib/analyzer/types';
 
+/**
+ * コンポーネントのプロパティ型定義
+ * @interface Props
+ */
 interface Props {
   data: DependencyNode[];
   files: FileNode[];
 }
 
+/**
+ * ノード情報の型定義
+ * @interface NodeInfo
+ */
 interface NodeInfo {
   name: string;
   type: string;
   dependencies: string[];
 }
 
+/**
+ * グラフノードの型定義
+ * @interface GraphNode
+ */
 interface GraphNode extends NodeObject {
   id: string;
   name: string;

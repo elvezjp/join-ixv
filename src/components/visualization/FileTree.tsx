@@ -12,10 +12,18 @@ import { TreeView, TreeItem } from '@mui/x-tree-view';
 import { ExpandMore, ChevronRight } from '@mui/icons-material';
 import { FileNode } from '@/lib/analyzer/types';
 
+/**
+ * ファイルツリーのプロパティ型定義
+ * @interface FileTreeProps
+ */
 interface FileTreeProps {
   files: FileNode[];
 }
 
+/**
+ * ツリーノードデータの型定義
+ * @interface TreeNodeData
+ */
 interface TreeNodeData {
   id: string;
   name: string;

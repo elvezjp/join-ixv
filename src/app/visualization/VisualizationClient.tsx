@@ -22,6 +22,10 @@ import { DependencyNode } from '@/lib/analyzer/astAnalyzer';
 import { FileNode } from '@/lib/analyzer/types';
 import { useState, useEffect } from 'react';
 
+/**
+ * 可視化クライアントのプロパティ型定義
+ * @interface VisualizationClientProps
+ */
 interface VisualizationClientProps {
   initialData: DependencyNode[];
 }

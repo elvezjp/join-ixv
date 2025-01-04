@@ -17,6 +17,10 @@ import { AST_NODE_TYPES } from '@typescript-eslint/types';
 
 export type NodeType = 'component' | 'context' | 'class' | 'function' | 'other';
 
+/**
+ * 依存関係ノードの型定義
+ * @interface DependencyNode
+ */
 export interface DependencyNode {
   id: string;
   name: string;
@@ -26,6 +30,10 @@ export interface DependencyNode {
   externalDependencies?: string[];
 }
 
+/**
+ * ファイル解析結果の型定義
+ * @interface FileAnalysis
+ */
 export interface FileAnalysis {
   node: DependencyNode;
   exports: {
@@ -100,7 +108,12 @@ export async function analyze(dirPath: string): Promise<DependencyNode[]> {
 
     return types.length > 0 ? types : ['other'];
   }
-  // JSXElementを検索する補助関数
+
+  /**
+   * JSXElementを検索する補助関数
+   * @param {TSESTree.Node} node - 検索対象のノード
+   * @param {() => void} onJSXFound - JSX要素発見時のコールバック
+   */
   function traverseFunction(node: TSESTree.Node, onJSXFound: () => void) {
     if (!node) return;
 
