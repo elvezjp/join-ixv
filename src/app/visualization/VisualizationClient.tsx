@@ -26,6 +26,12 @@ interface VisualizationClientProps {
   initialData: DependencyNode[];
 }
 
+/**
+ * 可視化機能のクライアントサイドコンポーネント
+ * @param {VisualizationClientProps} props - コンポーネントのプロパティ
+ * @param {DependencyNode[]} props.initialData - 初期依存関係データ
+ * @returns {JSX.Element} 可視化UI
+ */
 export default function VisualizationClient({ initialData }: VisualizationClientProps) {
   const { isPinned: isNavigationPinned, width: navigationPanelWidth } = useNavigationPanel();
   const { isOpen: isAssistantPanelOpen, closePanel: closeAssistantPanel, width: assistantPanelWidth } = useAssistantPanel();

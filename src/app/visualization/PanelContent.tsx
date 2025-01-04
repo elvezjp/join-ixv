@@ -51,14 +51,14 @@ export function NavigationPanelContent() {
 
 		</div>
 	);
-	}
+}
 
-	/**
-	 * アシスタントパネルのコンテンツを表示するコンポーネント。
-	 * 言語に応じたタイトル、説明、機能リスト、クイックアクセス情報を表示します。
-	 * @returns {JSX.Element} アシスタントパネルのコンテンツ
-	 */
-	export function AssistantPanelContent() {
+/**
+ * アシスタントパネルのコンテンツを表示するコンポーネント。
+ * 言語に応じたタイトル、説明、機能リスト、クイックアクセス情報を表示します。
+ * @returns {JSX.Element} アシスタントパネルのコンテンツ
+ */
+export function AssistantPanelContent() {
 	const { language } = useLanguage();
 	const t = language === 'ja' ? ja : en;
 

@@ -44,6 +44,13 @@ interface LegendItem {
   color: string;
 }
 
+/**
+ * 依存関係グラフを3Dで表示するコンポーネント
+ * @param {Props} props - コンポーネントのプロパティ
+ * @param {DependencyNode[]} props.data - 依存関係のデータ
+ * @param {FileNode[]} props.files - ファイル構造のデータ
+ * @returns {JSX.Element} 3D依存関係グラフ
+ */
 export default function DependencyGraph({ data, files }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [hoveredNode, setHoveredNode] = useState<NodeInfo | null>(null);

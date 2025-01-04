@@ -35,6 +35,11 @@ export interface FileAnalysis {
   }[];
 }
 
+/**
+ * プロジェクトの依存関係を解析する
+ * @param {string} dirPath - 解析対象のディレクトリパス
+ * @returns {Promise<DependencyNode[]>} 依存関係ノードの配列
+ */
 export async function analyze(dirPath: string): Promise<DependencyNode[]> {
   console.log('Starting dependency analysis...');
   console.log(`Directory: ${dirPath}`);
@@ -43,6 +48,12 @@ export async function analyze(dirPath: string): Promise<DependencyNode[]> {
   const nodes: Map<string, DependencyNode> = new Map();
   const projectRoot = process.cwd();
 
+  /**
+   * ASTからノードの種類を判定する
+   * @param {TSESTree.Program} ast - 解析対象のAST
+   * @param {string} filePath - ファイルパス
+   * @returns {NodeType[]} 判定されたノードの種類の配列
+   */
   function determineNodeType(ast: TSESTree.Program, filePath: string): NodeType[] {
     const types: NodeType[] = [];
     const relativePath = relative(projectRoot, filePath);
@@ -113,7 +124,12 @@ export async function analyze(dirPath: string): Promise<DependencyNode[]> {
     });
   }
 
-  // 相対パスを解決
+  /**
+   * インポートパスを解決する
+   * @param {string} importPath - インポートパス
+   * @param {string} currentFilePath - 現在のファイルパス
+   * @returns {string | null} 解決されたパス
+   */
   function resolveImportPath(importPath: string, currentFilePath: string): string | null {
     if (importPath.startsWith('@/')) {
       // @/で始まるパスをsrcディレクトリからの相対パスに変換
@@ -167,7 +183,11 @@ export async function analyze(dirPath: string): Promise<DependencyNode[]> {
     return null;
   }
 
-  // ファイル探索
+  /**
+   * ディレクトリ内の全ファイルを取得する
+   * @param {string} dir - ディレクトリパス
+   * @returns {string[]} ファイルパスの配列
+   */
   function getAllFiles(dir: string): string[] {
     const files = readdirSync(dir, { withFileTypes: true });
     let paths: string[] = [];
@@ -332,7 +352,11 @@ export async function analyze(dirPath: string): Promise<DependencyNode[]> {
   return Array.from(nodes.values());
 }
 
-// ASTを走査するヘルパー関数を修正
+/**
+ * ASTを走査する
+ * @param {TSESTree.Node} node - 走査対象のノード
+ * @param {(node: TSESTree.Node) => void} callback - 各ノードに対するコールバック
+ */
 function traverseAST(node: TSESTree.Node, callback: (node: TSESTree.Node) => void) {
   callback(node);
 

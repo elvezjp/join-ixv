@@ -22,7 +22,18 @@ interface TreeNodeData {
   children?: TreeNodeData[];
 }
 
+/**
+ * ファイル構造をツリー表示するコンポーネント
+ * @param {FileTreeProps} props - コンポーネントのプロパティ
+ * @param {FileNode[]} props.files - ファイル構造データ
+ * @returns {JSX.Element} ファイルツリーUI
+ */
 const FileTree = ({ files }: FileTreeProps) => {
+  /**
+   * ファイル構造データからツリー構造を構築する
+   * @param {FileNode[]} files - ファイル構造データ
+   * @returns {TreeNodeData[]} ツリー構造データ
+   */
   const buildTree = (files: FileNode[]): TreeNodeData[] => {
     const tree: TreeNodeData[] = [];
     const pathMap = new Map<string, TreeNodeData>();
@@ -57,6 +68,11 @@ const FileTree = ({ files }: FileTreeProps) => {
     return tree;
   };
 
+  /**
+   * ツリーノードを再帰的にレンダリングする
+   * @param {TreeNodeData[]} nodes - ツリーノードデータ
+   * @returns {JSX.Element[]} レンダリングされたツリーノード
+   */
   const renderTree = (nodes: TreeNodeData[]) => {
     return nodes.map((node) => (
       <TreeItem key={node.id} nodeId={node.id} label={node.name}>

@@ -11,6 +11,10 @@ import { analyze } from '@/lib/analyzer/astAnalyzer';
 import { resolve } from 'path';
 import VisualizationClient from './VisualizationClient';
 
+/**
+ * 静的パラメータを生成する関数
+ * @returns {Promise<Array<{params: {id: string}}>>} 静的パラメータの配列
+ */
 export async function generateStaticParams() {
   // ビルド時に実行される
   const componentsPath = resolve(process.cwd(), 'src');
@@ -21,6 +25,10 @@ export async function generateStaticParams() {
   }));
 }
 
+/**
+ * 可視化ページのメインコンポーネント
+ * @returns {Promise<JSX.Element>} 可視化ページのレンダリング結果
+ */
 export default async function VisualizationPage() {
   const componentsPath = resolve(process.cwd(), 'src');
   const dependencies = await analyze(componentsPath);
