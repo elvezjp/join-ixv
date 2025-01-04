@@ -3,7 +3,7 @@ import DependencyGraph from '@/components/visualization/DependencyGraph';
 import { resolve } from 'path';
 
 export default async function VisualizationPage() {
-  const componentsPath = resolve(process.cwd(), 'src/components');
+  const componentsPath = resolve(process.cwd(), 'src');
   const dependencies = await analyze(componentsPath);
 
   return (
