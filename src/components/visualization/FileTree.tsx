@@ -57,10 +57,13 @@ const FileTree = ({ files }: FileTreeProps) => {
 
   const treeData = buildTree(files);
 
+  const defaultExpanded = ['src'];
+
   return (
     <TreeView
       defaultCollapseIcon={<ExpandMore />}
       defaultExpandIcon={<ChevronRight />}
+      defaultExpanded={defaultExpanded}
       sx={{
         height: '100%',
         overflowY: 'auto',
