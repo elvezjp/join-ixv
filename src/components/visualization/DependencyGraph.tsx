@@ -24,21 +24,6 @@ export default function DependencyGraph({ data }: Props) {
   useEffect(() => {
     if (!containerRef.current) return;
 
-    const graphData = {
-      nodes: data.map(node => ({
-        id: node.id,
-        name: node.name,
-        type: node.type,
-        val: 1
-      })),
-      links: data.flatMap(node =>
-        node.dependencies.map(depId => ({
-          source: node.id,
-          target: depId
-        }))
-      )
-    };
-
     const container = containerRef.current;
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0xf5f5f5);
