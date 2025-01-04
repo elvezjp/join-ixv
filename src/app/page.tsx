@@ -48,7 +48,7 @@ function NavigationPanelContent() {
           {t.navigationPanel.pageAnalysis.title}
         </h3>
         <a
-          href="/visualization"
+          href="/join-ixv/visualization"
           className="text-blue-300 hover:text-blue-100 transition-colors duration-200"
         >
           {t.navigationPanel.pageAnalysis.viewGraph}
