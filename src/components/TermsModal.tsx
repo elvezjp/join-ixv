@@ -71,7 +71,7 @@ export default function TermsModal({ isOpen, onClose }: TermsModalProps) {
       }}
     >
       <div className="fixed inset-0 flex items-center justify-center p-4">
-        <div className={`modal-content bg-white rounded-lg w-full max-w-2xl ${animationState}`}>
+        <div className={`modal-content text-black bg-white rounded-lg w-full max-w-2xl ${animationState}`}>
           <div className="modal-header p-6 border-b">
             <h2 className="text-2xl font-bold">{t.termsModal.title}</h2>
           </div>
