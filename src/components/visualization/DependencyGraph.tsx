@@ -56,9 +56,6 @@ export default function DependencyGraph({ data }: Props) {
       .linkOpacity(0.5)
       .linkDirectionalArrowLength(5)
       .linkDirectionalArrowRelPos(1)
-      .linkDirectionalParticles(2)
-      .linkDirectionalParticleWidth(2)
-      .linkDirectionalParticleSpeed(0.005)
       .nodeThreeObject((node: GraphNode) => {
         const group = new THREE.Group();
 
