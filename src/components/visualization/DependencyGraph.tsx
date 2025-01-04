@@ -107,7 +107,7 @@ export default function DependencyGraph({ data }: Props) {
 
       // ラベルの作成
       const labelDiv = document.createElement('div');
-      labelDiv.className = 'bg-transparent px-2 py-1 rounded text-sm';
+      labelDiv.className = 'bg-transparent text-black px-2 py-1 rounded text-sm';
       labelDiv.textContent = `${node.name} (${node.type})`;
       const label = new CSS2DObject(labelDiv);
       label.position.set(0, NODE_SIZE + 10, 0);
@@ -215,7 +215,7 @@ export default function DependencyGraph({ data }: Props) {
       <div ref={containerRef} className="w-full h-full" />
       {hoveredNode && (
         <div
-          className="absolute bg-white/90 p-4 rounded-lg shadow-lg z-10 backdrop-blur-sm border border-gray-200"
+          className="absolute text-black bg-white/90 p-4 rounded-lg shadow-lg z-10 backdrop-blur-sm border border-gray-200"
           style={{
             left: mousePos.x + 10,
             top: mousePos.y + 10,
