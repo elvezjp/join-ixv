@@ -30,7 +30,7 @@ export function NavigationPanelContent() {
 			{t.navigationPanel.homeLink.title}
 			</h3>
 			<Link
-				href={process.env.NODE_ENV === 'production' ? '/join-ixv' : '/'}
+				href='/'
 				legacyBehavior
 			>
 				<a className="text-blue-300 hover:text-blue-100 transition-colors duration-200">
