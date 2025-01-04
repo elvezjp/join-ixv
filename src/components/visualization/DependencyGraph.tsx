@@ -177,7 +177,7 @@ export default function DependencyGraph({ data, files }: Props) {
             className="absolute text-black bg-white/90 p-4 rounded-lg shadow-lg z-10 backdrop-blur-sm border border-gray-200"
             style={{
               left: '50%',
-              bottom: 20,
+              bottom: 100,
               transform: 'translateX(-50%)'
             }}
           >
