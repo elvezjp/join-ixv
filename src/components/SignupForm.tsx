@@ -65,11 +65,11 @@ export default function SignupForm() {
             priority
           />
         </div>
-        <h2 className="text-3xl font-bold text-center mb-4">{t.signup.title}</h2>
+        <h2 className="text-3xl font-bold text-center mb-4 text-gray-800">{t.signup.title}</h2>
         <p className="text-center text-gray-700 mb-4">{t.signup.note}</p>
         <form ref={formRef} onSubmit={handleSubmit} className="bg-white p-8 rounded-xl shadow-lg max-w-xl mx-auto">
           <div className="mb-4">
-            <label htmlFor="company" className="block text-gray-700 font-semibold mb-2">
+            <label htmlFor="company" className="block text-gray-800 font-semibold mb-2">
               {t.signup.form.company}
             </label>
             <input
@@ -81,7 +81,7 @@ export default function SignupForm() {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="department" className="block text-gray-700 font-semibold mb-2">
+            <label htmlFor="department" className="block text-gray-800 font-semibold mb-2">
               {t.signup.form.department}
             </label>
             <input
@@ -93,7 +93,7 @@ export default function SignupForm() {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="phone" className="block text-gray-700 font-semibold mb-2">
+            <label htmlFor="phone" className="block text-gray-800 font-semibold mb-2">
               {t.signup.form.phone}
             </label>
             <input
@@ -105,7 +105,7 @@ export default function SignupForm() {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
+            <label htmlFor="email" className="block text-gray-800 font-semibold mb-2">
               {t.signup.form.email}
             </label>
             <input
@@ -117,7 +117,7 @@ export default function SignupForm() {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">
+            <label htmlFor="name" className="block text-gray-800 font-semibold mb-2">
               {t.signup.form.name}
             </label>
             <input
@@ -139,7 +139,7 @@ export default function SignupForm() {
                 checked={isAcknowledged}
                 onChange={(e) => setIsAcknowledged(e.target.checked)}
               />
-              <label htmlFor="acknowledgement" className="text-gray-700">
+              <label htmlFor="acknowledgement" className="text-gray-800">
                 <button
                   type="button"
                   onClick={() => setIsNoticeModalOpen(true)}
@@ -160,7 +160,7 @@ export default function SignupForm() {
                 checked={isAgreed}
                 onChange={(e) => setIsAgreed(e.target.checked)}
               />
-              <label htmlFor="agreement" className="text-gray-700">
+              <label htmlFor="agreement" className="text-gray-800">
                 <button
                   type="button"
                   onClick={() => setIsTermsModalOpen(true)}

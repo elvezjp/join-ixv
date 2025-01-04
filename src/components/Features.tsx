@@ -24,7 +24,7 @@ export default function Features() {
 						{t.features.cards.map((card, index) => (
 							<div key={index} className="feature-card bg-gray-100 p-6 rounded-lg shadow-lg">
 								<h3 className="text-xl font-bold text-blue-600 mb-4">{card.title}</h3>
-								<p>{card.description}</p>
+								<p className="text-gray-800">{card.description}</p>
 							</div>
 						))}
 					</div>
@@ -39,7 +39,7 @@ export default function Features() {
 							<h3 className="text-xl font-bold text-blue-600 mb-4">{t.challenges.problems.title}</h3>
 							<ul className="list-disc list-inside text-gray-700">
 								{t.challenges.problems.items.map((item, index) => (
-									<li key={index}>{item}</li>
+									<li key={index} className="text-gray-800">{item}</li>
 								))}
 							</ul>
 						</div>
@@ -47,7 +47,7 @@ export default function Features() {
 							<h3 className="text-xl font-bold text-blue-600 mb-4">{t.challenges.solutions.title}</h3>
 							<ul className="list-disc list-inside text-gray-700">
 								{t.challenges.solutions.items.map((item, index) => (
-									<li key={index}>{item}</li>
+									<li key={index} className="text-gray-800">{item}</li>
 								))}
 							</ul>
 						</div>
@@ -62,7 +62,7 @@ export default function Features() {
 						{t.whyIxv.cards.map((card, index) => (
 							<div key={index} className="feature-card bg-gray-100 p-6 rounded-lg shadow-lg">
 								<h3 className="text-xl font-bold text-blue-600 mb-4">{card.title}</h3>
-								<p>{card.description}</p>
+								<p className="text-gray-800">{card.description}</p>
 							</div>
 						))}
 					</div>

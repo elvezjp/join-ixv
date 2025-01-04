@@ -68,7 +68,7 @@ function AssistantPanelContent() {
   const t = language === 'ja' ? ja : en;
 
   return (
-    <div className="bg-white p-4">
+    <div className="bg-white p-4 text-gray-800">
       <h2 className="text-lg font-semibold">{t.assistantPanel.title}</h2>
       <p>{t.assistantPanel.description}</p>
       <ul className="list-disc list-inside">
