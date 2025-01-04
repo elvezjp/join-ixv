@@ -8,11 +8,9 @@ export async function generateStaticParams() {
   const componentsPath = resolve(process.cwd(), 'src');
   const dependencies = await analyze(componentsPath);
 
-  return {
-    props: {
-      dependencies
-    }
-  };
+  return dependencies.map(dependency => ({
+    params: { id: dependency.id }
+  }));
 }
 
 export default async function VisualizationPage() {
