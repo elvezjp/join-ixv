@@ -30,7 +30,7 @@ export function NavigationPanelContent() {
 			{t.navigationPanel.homeLink.title}
 			</h3>
 			<Link
-				href={window.location.pathname.includes('join-ixv') ? '/join-ixv' : '/'}
+				href={window.location.pathname.startsWith('/join-ixv') ? '/join-ixv' : '/'}
 				legacyBehavior
 			>
 				<a className="text-blue-300 hover:text-blue-100 transition-colors duration-200">
