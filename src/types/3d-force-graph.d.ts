@@ -4,6 +4,7 @@ declare module '3d-force-graph' {
     name: string;
     type: string;
     val: number;
+    color?: string;
   }
 
   interface LinkObject {
@@ -21,6 +22,7 @@ declare module '3d-force-graph' {
     nodeLabel(label: string): GraphInstance;
     nodeAutoColorBy(attribute: string): GraphInstance;
     onNodeHover(callback: (node: NodeObject | null) => void): GraphInstance;
+    nodeThreeObject(callback: (node: NodeObject) => THREE.Object3D): GraphInstance;
     _destructor(): void;
   }
 

@@ -62,6 +62,9 @@ importers:
       three:
         specifier: ^0.172.0
         version: 0.172.0
+      three-spritetext:
+        specifier: ^1.9.3
+        version: 1.9.3(three@0.172.0)
     devDependencies:
       '@eslint/eslintrc':
         specifier: ^3
@@ -2430,6 +2433,12 @@ packages:
     engines: {node: '>=12'}
     peerDependencies:
       three: '>=0.168'
+
+  three-spritetext@1.9.3:
+    resolution: {integrity: sha512-p7iEQr7anABRUJNOH2logMf1aRuWb026IshUC4aJ8F+bbMTn5Z43/Jd7/W3VihE3ToCwrWMl6u6VwgFMTw0jvA==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      three: '>=0.86.0'
 
   three-stdlib@2.35.2:
     resolution: {integrity: sha512-Ns9ZdiFEAsiv8JvHS28Qgxg4YRTq13Ixa4EDUQZhUovZ3j/GLTou4zE887SLSqsuRZwuy3gklttn2ha5JaJpTQ==}
@@ -5241,6 +5250,10 @@ snapshots:
       accessor-fn: 1.5.1
       kapsule: 1.16.0
       polished: 4.3.1
+      three: 0.172.0
+
+  three-spritetext@1.9.3(three@0.172.0):
+    dependencies:
       three: 0.172.0
 
   three-stdlib@2.35.2(three@0.172.0):

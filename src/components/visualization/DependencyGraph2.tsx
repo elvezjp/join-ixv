@@ -4,6 +4,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import ForceGraph3D from '3d-force-graph';
 import { DependencyNode } from '@/lib/analyzer/astAnalyzer';
 import { NodeObject } from '3d-force-graph';
+import SpriteText from 'three-spritetext';
+import * as THREE from 'three';
 
 interface Props {
   data: DependencyNode[];
@@ -41,6 +43,24 @@ export default function DependencyGraph({ data }: Props) {
       .graphData(graphData)
       .nodeLabel('name')
       .nodeAutoColorBy('type')
+      .nodeThreeObject(node => {
+        const group = new THREE.Group();
+
+        // 球を作成
+        const sphereGeometry = new THREE.SphereGeometry(5);
+        const sphereMaterial = new THREE.MeshBasicMaterial({ color: node.color || 'gray' });
+        const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+        group.add(sphere);
+
+        // ラベルを作成
+        const sprite = new SpriteText(`${node.name} [${node.type}]`);
+        sprite.color = 'white';
+        sprite.textHeight = 8;
+        sprite.position.set(0, 10, 0); // 球の上にラベルを配置
+        group.add(sprite);
+
+        return group;
+      })
       .onNodeHover((node: NodeObject | null) => {
         if (node) {
           const nodeInfo: NodeInfo = {
