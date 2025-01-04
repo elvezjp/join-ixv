@@ -142,13 +142,14 @@ export async function analyze(dirPath: string): Promise<DependencyNode[]> {
 
       const name = filePath.split('/').pop()?.replace(/\.[jt]sx?$/, '') || '';
       const types = determineNodeType(ast, filePath);
+      const relativePath = relative(projectRoot, filePath);
 
       const node: DependencyNode = {
-        id: filePath,
+        id: relativePath,
         name,
-        type: types[0], // 最初の型を使用
+        type: types[0],
         dependencies: [],
-        filePath
+        filePath: relativePath
       };
 
       nodes.set(filePath, node);
@@ -175,7 +176,7 @@ export async function analyze(dirPath: string): Promise<DependencyNode[]> {
       for (const importPath of importPaths) {
         const resolvedPath = resolveImportPath(importPath, filePath);
         if (resolvedPath && nodes.has(resolvedPath)) {
-          node.dependencies.push(resolvedPath);
+          node.dependencies.push(relative(projectRoot, resolvedPath));
         }
       }
     } catch (error) {
