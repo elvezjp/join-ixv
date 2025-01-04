@@ -228,6 +228,10 @@ export default {
       'チーム連携',
     ],
     quickAccess: 'などの機能にすばやくアクセス',
+    pageAnalysis: {
+      title: 'ページ解析',
+      viewGraph: '依存関係グラフを表示'
+    }
   },
   assistantPanel: {
     title: 'AIアシスタントがあなたの開発をサポート',

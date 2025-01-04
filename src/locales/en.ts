@@ -228,6 +228,10 @@ export default {
       'Team Collaboration',
     ],
     quickAccess: 'Quick access to features like these',
+    pageAnalysis: {
+      title: 'Page Analysis',
+      viewGraph: 'View Dependency Graph'
+    }
   },
   assistantPanel: {
     title: 'AI Assistant Supports Your Development',

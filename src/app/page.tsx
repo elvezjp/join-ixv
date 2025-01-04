@@ -42,6 +42,18 @@ function NavigationPanelContent() {
         ))}
       </ul>
       <p>{t.navigationPanel.quickAccess}</p>
+
+      <div className="mt-4 border-t border-gray-600 pt-4">
+        <h3 className="text-md font-semibold mb-2">
+          {t.navigationPanel.pageAnalysis.title}
+        </h3>
+        <a
+          href="/visualization"
+          className="text-blue-300 hover:text-blue-100 transition-colors duration-200"
+        >
+          {t.navigationPanel.pageAnalysis.viewGraph}
+        </a>
+      </div>
     </div>
   );
 }
