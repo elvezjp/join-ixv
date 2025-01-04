@@ -228,18 +228,14 @@ export default {
       'Team Collaboration',
     ],
     quickAccess: 'Quick access to features like these',
-    homeLink: {
-      title: 'Home',
-      linkText: 'Go back to Home'
-    },
     pageAnalysisLink: {
       title: 'Page Analysis',
       linkText: 'View Dependency Graph'
     },
-    pageAnalysis2Link: {
-      title: 'Page Analysis with 3D Force-Directed Graph',
-      linkText: 'View Dependency Graph'
-    }
+    homeLink: {
+      title: 'Home',
+      linkText: 'Go back to Home'
+    },
   },
   assistantPanel: {
     title: 'AI Assistant Supports Your Development',

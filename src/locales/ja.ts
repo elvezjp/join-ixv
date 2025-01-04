@@ -232,10 +232,6 @@ export default {
       title: 'ページ解析',
       linkText: '依存関係グラフを表示'
     },
-    pageAnalysis2Link: {
-      title: 'ページ解析（3D Force-Directed Graph）',
-      linkText: '依存関係グラフを表示'
-    },
     homeLink: {
       title: 'ホーム',
       linkText: 'ホームへ戻る'
