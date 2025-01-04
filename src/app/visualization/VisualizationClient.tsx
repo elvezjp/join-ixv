@@ -19,16 +19,16 @@ export default function VisualizationClient({ initialData }: VisualizationClient
   const { isOpen: isAssistantPanelOpen, closePanel: closeAssistantPanel, width: assistantPanelWidth } = useAssistantPanel();
 
   return (
-    <div>
+    <div className="h-screen">
       <NavigationPanel>
         <NavigationPanelContent />
       </NavigationPanel>
       <AssistantPanel isOpen={isAssistantPanelOpen} onClose={closeAssistantPanel}>
         <AssistantPanelContent />
       </AssistantPanel>
-      <div className="bg-gradient-to-r from-[#1a365d] to-[#2563eb] text-white">
+      <div className="bg-gradient-to-r from-[#1a365d] to-[#2563eb] text-white h-full">
         <Box
-          className="flex-1 transition-all duration-300 ease-in-out"
+          className="flex-1 h-full transition-all duration-300 ease-in-out"
           sx={{
             marginLeft: isNavigationPinned ? navigationPanelWidth : 0,
             marginRight: isAssistantPanelOpen ? assistantPanelWidth : 0
