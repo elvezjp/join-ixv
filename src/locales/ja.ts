@@ -96,7 +96,7 @@ export default {
   },
   signup: {
     logoAlt: 'IXVロゴ',
-    title: 'クローズドβ版申込み',
+    title: 'クローズドβ版 募集は終了しました',
     note: '全ての項目が必須です',
     form: {
       company: '会社名',

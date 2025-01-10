@@ -96,7 +96,7 @@ export default {
   },
   signup: {
     logoAlt: 'IXV Logo',
-    title: 'Apply for Closed Beta',
+    title: 'Closed Beta Application Period Has Ended',
     note: 'All fields are required',
     form: {
       company: 'Company Name',

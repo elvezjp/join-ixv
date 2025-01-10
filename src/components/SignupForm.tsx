@@ -66,6 +66,7 @@ export default function SignupForm() {
           />
         </div>
         <h2 className="text-3xl font-bold text-center mb-4 text-gray-800">{t.signup.title}</h2>
+        {/*
         <p className="text-center text-gray-700 mb-4">{t.signup.note}</p>
         <form ref={formRef} onSubmit={handleSubmit} className="bg-white p-8 rounded-xl shadow-lg max-w-xl mx-auto">
           <div className="mb-4">
@@ -184,6 +185,7 @@ export default function SignupForm() {
         </form>
         <NoticeModal isOpen={isNoticeModalOpen} onClose={() => setIsNoticeModalOpen(false)} />
         <TermsModal isOpen={isTermsModalOpen} onClose={() => setIsTermsModalOpen(false)} />
+        */}
       </div>
     </section>
   );
