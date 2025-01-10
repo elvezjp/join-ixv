@@ -7,10 +7,10 @@
  * @copyright © 2024 株式会社エルブズ. All rights reserved.
  */
 
-import { FormEvent, useRef, useState } from 'react';
-import emailjs from '@emailjs/browser';
-import NoticeModal from './NoticeModal';
-import TermsModal from './TermsModal';
+//import { FormEvent, useRef, useState } from 'react';
+//import emailjs from '@emailjs/browser';
+//import NoticeModal from './NoticeModal';
+//import TermsModal from './TermsModal';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ja from '@/locales/ja';
 import en from '@/locales/en';
@@ -21,36 +21,36 @@ import Image from 'next/image';
  * @returns 申込みフォームのコンポーネント。
  */
 export default function SignupForm() {
-  const [isAgreed, setIsAgreed] = useState(false);
-  const [isAcknowledged, setIsAcknowledged] = useState(false);
-  const [isNoticeModalOpen, setIsNoticeModalOpen] = useState(false);
-  const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
-  const formRef = useRef<HTMLFormElement>(null);
+  //const [isAgreed, setIsAgreed] = useState(false);
+  //const [isAcknowledged, setIsAcknowledged] = useState(false);
+  //const [isNoticeModalOpen, setIsNoticeModalOpen] = useState(false);
+  //const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
+  //const formRef = useRef<HTMLFormElement>(null);
   const { language } = useLanguage();
   const t = language === 'ja' ? ja : en;
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
+  // const handleSubmit = async (e: FormEvent) => {
+  //   e.preventDefault();
 
-    if (!formRef.current) return;
+  //   if (!formRef.current) return;
 
-    try {
-      const result = await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        formRef.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-      );
+  //   try {
+  //     const result = await emailjs.sendForm(
+  //       process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+  //       process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+  //       formRef.current,
+  //       process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+  //     );
 
-      if (result.text === 'OK') {
-        alert(t.signup.messages.success);
-        formRef.current.reset();
-      }
-    } catch (error) {
-      console.error(error);
-      alert(t.signup.messages.error);
-    }
-  };
+  //     if (result.text === 'OK') {
+  //       alert(t.signup.messages.success);
+  //       formRef.current.reset();
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //     alert(t.signup.messages.error);
+  //   }
+  // };
 
   return (
     <section id="signup" className="py-20 bg-gray-50">
