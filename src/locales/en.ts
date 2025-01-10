@@ -17,9 +17,7 @@ export default {
     logo: 'IXV',
     notice: {
       title: '[Important Notice]',
-      message: 'While those who have completed pre-registration will receive priority invitation to the closed beta version, you will need to apply through the ',
-      formLink: 'application form on this page',
-      messageEnd: ' to officially participate in the closed beta.'
+      message: 'The application for the closed beta version has been closed. Thank you for your overwhelming interest and numerous applications. The Closed Beta platform is currently under development. We will notify all applicants once the platform is ready.',
     },
     slides: [
       {

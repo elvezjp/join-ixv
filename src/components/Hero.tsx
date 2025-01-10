@@ -86,14 +86,6 @@ const Hero = () => {
 				<h2 className="text-xl font-bold mb-4">{t.header.notice.title}</h2>
 				<p className="mb-4">
 					{t.header.notice.message}
-					<Link
-					href="#signup"
-					className="underline"
-					scroll={true}
-					>
-					{t.header.notice.formLink}
-					</Link>
-					{t.header.notice.messageEnd}
 				</p>
 				</div>
 			</div>
