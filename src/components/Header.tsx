@@ -32,7 +32,7 @@ export default function Header() {
           <LanguageSwitcher />
           <Link
             href="#signup"
-            className="bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-blue-50 transition font-semibold"
+            className="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold cursor-not-allowed opacity-50"
           >
             {t.header.signup}
           </Link>

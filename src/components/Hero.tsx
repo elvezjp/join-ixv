@@ -68,7 +68,8 @@ const Hero = () => {
 				<div className="space-x-4">
 				<Link
 					href="#signup"
-					className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition"
+
+					className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold cursor-not-allowed opacity-50"
 					scroll={true}
 				>
 					{t.header.signup}

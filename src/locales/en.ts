@@ -12,7 +12,7 @@ export default {
     title2: 'Development',
     description1: 'IXV is an AI-powered, next-generation development tool designed to make team development smarter and more efficient.',
     description2: '',
-    signup: 'Apply for Closed Beta',
+    signup: 'Closed Beta - Applications Closed',
     details: 'Learn More',
     logo: 'IXV',
     notice: {

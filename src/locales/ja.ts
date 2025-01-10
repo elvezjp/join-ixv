@@ -12,7 +12,7 @@ export default {
     title2: 'シンプルに',
     description1: 'IXV（イクシブ）は、AIを活用した次世代の開発ツール。',
     description2: 'チーム開発をよりスマートに、より効率的に。',
-    signup: 'クローズドβ版申込み',
+    signup: 'クローズドβ版申込み終了',
     details: '詳細を見る',
     logo: 'IXV',
     notice: {
